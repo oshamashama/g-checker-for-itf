@@ -7,18 +7,31 @@ ITF の卒業要件を確認したい。(今はcoins20 だけ)
 # usage
 
 ```
-python3 main.py $(target csv file)
+python3 main.py -i $(target csv file)
 ```
 
 で実行できます。
 複数ファイルを引数に与えることができ、その場合は連続して判定が行なわれます。
 `target csv file` は twins の成績ページからダウンロードしたファイル (UTF, CSV) を想定しています。
 
+```
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        target file from twins (UTF-8, CSV)
+  -r REQUIREMENTS, --requirements REQUIREMENTS
+                        requirements file
+  -g, --gpa             print GPA Flag
+  -d, --drop            print drop credit unable Flag
+  -n, --name            print name and id, able Flag
+```
+
 # test 
 
 ```
-python3 main.py sample.csv
+python3 main.py -i sample.csv -r coins20.json
 ```
+
 
 で予め用意されたサンプルで動作を確認することが出来ます。
 
