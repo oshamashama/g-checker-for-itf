@@ -4,6 +4,8 @@ import re
 from tokenize import String
 from xmlrpc.client import boolean
 import json
+import argparse
+
 MAX = 10000
 
 
@@ -161,8 +163,8 @@ class Level1(Dir):
     def __init__(self, name, max, min):
         super().__init__(name, max, min, True, 1)
 
-def genCoins20() -> Level1:
-    with open('coins20.json', 'r') as f:
+def parseJSON(CSVFILENAME) -> Level1:
+    with open(CSVFILENAME, 'r') as f:
         data = json.load(f)
     MAX_STR = "max_certificated_credit_num"
     MIN_STR = "min_certificated_credit_num"
@@ -271,21 +273,21 @@ def readNameFromCSV(CSVFILENAME):
         # return reader[1][1]
 
 def main():
-    args = sys.argv
-    CSVFILENAME = ""
-
-    # coins20.print_son()
+    parser = argparse.ArgumentParser(description='This program is check that your credit can meet the graduation requirements.')
+    parser.add_argument('-i', '--input', help="target file from twins (UTF-8, CSV)", default="sample.csv")
+    parser.add_argument('-r', '--requirements', help="requirements file", default="coins20.json")
+    args = parser.parse_args()
     
-    for CSVFILENAME in args[1:]:    
-    # if not CSVFILENAME == "":
-        coins20 = genCoins20()
-        print("-"*100,"\n",CSVFILENAME, readNameFromCSV(CSVFILENAME))
-        kamoku = readCSV(CSVFILENAME)
-        coins20.check(kamoku)
-        coins20.print_son()
-        gp(kamoku)
+    CSVFILENAME = args.input
+    JSONFILENAME = args.requirements
+
+    coins20 = parseJSON(JSONFILENAME)
+    print("-"*100,"\n",CSVFILENAME, readNameFromCSV(CSVFILENAME))
+    kamoku = readCSV(CSVFILENAME)
+    coins20.check(kamoku)
+    coins20.print_son()
+    gp(kamoku)
     
 
 if __name__ == '__main__':
     main()
-    
