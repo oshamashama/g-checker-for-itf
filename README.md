@@ -1,4 +1,4 @@
-# g-checker-from-itf
+# g-checker-for-itf
 ITF の卒業要件を確認したい。(今はcoins20 だけ)
 
 提供されているプログラム、またそのプログラムによる実行結果の正確性の保証できかねます。
