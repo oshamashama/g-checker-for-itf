@@ -136,7 +136,8 @@ class RecognizedFilter():
                         feature_credit += kamoku.credit
                         res_course_name.append("{}{}{}".format(FEATURE_COLOR_STR, kamoku.course_name, Color.RESET))
                     else:
-                        res_course_name.append("{}{}{}".format(Color.RED, kamoku.course_name, Color.RESET))
+                        if args.drop:
+                            res_course_name.append("{}{}{}".format(Color.RED, kamoku.course_name, Color.RESET))
         return res_credit, res_course_name, feature_credit
     
     def print_son(self, depth):
@@ -276,17 +277,23 @@ def main():
     parser = argparse.ArgumentParser(description='This program is check that your credit can meet the graduation requirements.')
     parser.add_argument('-i', '--input', help="target file from twins (UTF-8, CSV)", default="sample.csv")
     parser.add_argument('-r', '--requirements', help="requirements file", default="coins20.json")
+    parser.add_argument('-g', '--gpa', help="print GPA Flag", action="store_true")
+    parser.add_argument('-d', '--drop', help="print drop credit unable Flag", action="store_false")
+    parser.add_argument('-n', '--name', help="print name and id, able Flag", action="store_true")
+    global args
     args = parser.parse_args()
     
     CSVFILENAME = args.input
     JSONFILENAME = args.requirements
 
     coins20 = parseJSON(JSONFILENAME)
-    print("-"*100,"\n",CSVFILENAME, readNameFromCSV(CSVFILENAME))
+    if args.name:
+        print(CSVFILENAME, readNameFromCSV(CSVFILENAME))
     kamoku = readCSV(CSVFILENAME)
     coins20.check(kamoku)
     coins20.print_son()
-    gp(kamoku)
+    if args.gpa:
+        gp(kamoku)
     
 
 if __name__ == '__main__':
