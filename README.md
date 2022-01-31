@@ -1,7 +1,7 @@
-# g-checker-from-itf
+# g-checker-for-itf
 ITF の卒業要件を確認したい。(今はcoins20 だけ)
 
-提供されているプログラム、またそのプログラムによる実行結果の正確性の保証できかねます。
+提供されているプログラム、またそのプログラムによる実行結果に関する保証はできかねます。
 
 
 # usage
@@ -22,3 +22,6 @@ python3 main.py sample.csv
 
 で予め用意されたサンプルで動作を確認することが出来ます。
 
+# image
+
+<img width="1358" alt="イメージ画像" src="https://user-images.githubusercontent.com/65126083/151887795-b8b7bca4-b8bc-4822-ad60-e7e721b23805.png">
