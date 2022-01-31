@@ -11,6 +11,7 @@ python3 main.py $(target csv file)
 ```
 
 で実行できます。
+複数ファイルを引数に与えることができ、その場合は連続して判定が行なわれます。
 `target csv file` は twins の成績ページからダウンロードしたファイル (UTF, CSV) を想定しています。
 
 # test 
