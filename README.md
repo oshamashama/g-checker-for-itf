@@ -1,5 +1,5 @@
-# ITFGraduationChecker
-ITF の卒業要件を確認します。(今はcoins20 のみ)
+# g-checker-from-itf
+ITF の卒業要件を確認したい。(今はcoins20 だけ)
 
 # usage
 
