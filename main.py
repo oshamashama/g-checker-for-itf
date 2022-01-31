@@ -1,19 +1,9 @@
-from ast import And, arg
-from asyncore import read
-from cgitb import reset
-from mimetypes import init
 import sys
 import csv
-import pprint
 import re
-from tabnanny import check
 from tokenize import String
-from unicodedata import name
-from turtle import color
-from xml.sax.handler import feature_external_ges
 from xmlrpc.client import boolean
 import json
-from numpy import number
 MAX = 10000
 
 
