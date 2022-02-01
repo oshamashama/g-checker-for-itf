@@ -95,6 +95,7 @@ class Dir():
     def genDict(self):
         res = {
             "max_certificated_credit_num":self.max_certificated_credit_num,
+            "now_certificated_credit_num":self.now_certificated_credit_num,
             "min_certificated_credit_num":self.min_certificated_credit_num,
             "leaf":{}
         }
@@ -124,11 +125,20 @@ class RecognizedFilter():
     name:str
     regexp_number:str
     regexp_name:str
+
+
     def __init__(self, name, num, regname) -> None:
         self.name = name
         self.regexp_number = num
         self.regexp_name = regname
     
+    def genDict(self):
+        res = {
+            "regexp_number":self.regexp_number,
+            "regexp_name":self.regexp_name,
+        }
+        return res
+
     def checkCourse(self, ls):
         res_credit = 0
         feature_credit = 0
@@ -288,7 +298,6 @@ def readNameFromCSV(CSVFILENAME):
         # return reader[1][1]
 
 def genJSON(v0):
-    v0 = genCoins20()
     res = {}
     res[v0.name] = v0.genDict()
     for v1 in v0.course_filter.values():
@@ -300,9 +309,9 @@ def genJSON(v0):
                 for v4 in v3.course_filter.values():
                     res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name] = v4.genDict()
                     for v5 in v4.course_filter.values():
-                        res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name]["leaf"]["regexp_number"] = v5.regexp_number
-                        res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name]["leaf"]["regexp_name"] = v5.regexp_name
-    return json.dumps(res, ensure_ascii=False, indent=4)
+                        res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name]["leaf"] = v5.genDict()
+    with open("{}-{}".format(args.input.replace(".csv", ""), args.requirements), 'w') as f:
+        json.dump(res, f, ensure_ascii=False, indent=4)
 
 def main():
     parser = argparse.ArgumentParser(description='This program is check that your credit can meet the graduation requirements.')
@@ -311,6 +320,7 @@ def main():
     parser.add_argument('-g', '--gpa', help="print GPA Flag", action="store_true")
     parser.add_argument('-d', '--drop', help="print drop credit unable Flag", action="store_false")
     parser.add_argument('-n', '--name', help="print name and id, able Flag", action="store_true")
+    parser.add_argument('-s', '--save', help="save as JSON, Flag", action="store_true")
     global args
     args = parser.parse_args()
     
@@ -325,7 +335,8 @@ def main():
     coins20.print_son()
     if args.gpa:
         gp(kamoku)
-    
+    if args.save:
+        genJSON(coins20)
 
 if __name__ == '__main__':
     main()
