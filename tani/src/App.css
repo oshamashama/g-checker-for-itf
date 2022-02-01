@@ -44,8 +44,9 @@
 
 .bl_tate {
     display: block;
+    margin: 1px;
     border: 1px solid cyan;
-    border-radius: 20px;
+    border-radius: 15px;
     background-clip: border-box;
 }
 
