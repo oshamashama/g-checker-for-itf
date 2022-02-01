@@ -1,3 +1,4 @@
+import json
 from ast import And, arg
 from asyncore import read
 from cgitb import reset
@@ -94,6 +95,15 @@ class Dir():
             print("{}{}{} {:5.1f}{}({:5.1f}){}/{:5.1f}{} {}".format(OK_COLOR_STR,"".rjust(self.get_indent(), "　"), self.name.ljust(5, "　").ljust(24 - self.get_indent(), "　"), self.now_certificated_credit_num, FEATURE_COLOR_STR, self.now_certificated_credit_num + self.feature_certificated_credit_num, OK_COLOR_STR, self.min_certificated_credit_num, RESET_COLOR_STR, self.namelist()))
         else:
             print("{}{}{} {:5.1f}{}({:5.1f}){}/{:5.1f}{} {}".format(FAIL_COLOR_STR,"".rjust(self.get_indent(), "　"), self.name.ljust(5, "　").ljust(24 - self.get_indent(), "　"), self.now_certificated_credit_num, FEATURE_COLOR_STR, self.now_certificated_credit_num + self.feature_certificated_credit_num, FAIL_COLOR_STR, self.min_certificated_credit_num, RESET_COLOR_STR, self.namelist()))
+
+    def genDict(self):
+        res = {
+            "max_certificated_credit_num":self.max_certificated_credit_num,
+            "min_certificated_credit_num":self.min_certificated_credit_num,
+            "leaf":{}
+        }
+        return res
+        # return {self.name:res}
 
     def check(self, ls) -> int:
         self.now_certificated_credit_num = 0
@@ -454,20 +464,29 @@ def readNameFromCSV(CSVFILENAME):
                 return row[1]
         # return reader[1][1]
 
+def genJSON(v0):
+    v0 = genCoins20()
+    res = {}
+    res[v0.name] = v0.genDict()
+    for v1 in v0.course_filter.values():
+        res[v0.name]["leaf"][v1.name] = v1.genDict()
+        for v2 in v1.course_filter.values():
+            res[v0.name]["leaf"][v1.name]["leaf"][v2.name] = v2.genDict()
+            for v3 in v2.course_filter.values():
+                res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name] = v3.genDict()
+                for v4 in v3.course_filter.values():
+                    res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name] = v4.genDict()
+                    for v5 in v4.course_filter.values():
+                        res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name]["leaf"]["regexp_number"] = v5.regexp_number
+                        res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name]["leaf"]["regexp_name"] = v5.regexp_name
+    return json.dumps(res, ensure_ascii=False, indent=4)
+
 def main():
     args = sys.argv
     CSVFILENAME = ""
 
     # coins20.print_son()
-    
-    for CSVFILENAME in args[1:]:    
-    # if not CSVFILENAME == "":
-        coins20 = genCoins20()
-        print("-"*100,"\n",CSVFILENAME, readNameFromCSV(CSVFILENAME))
-        kamoku = readCSV(CSVFILENAME)
-        coins20.check(kamoku)
-        coins20.print_son()
-        gp(kamoku)
+    print(genJSON(genCoins20()))
     
 
 if __name__ == '__main__':
