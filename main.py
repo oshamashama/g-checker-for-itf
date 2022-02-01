@@ -312,6 +312,8 @@ def genJSON(v0):
                         res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name]["leaf"][v4.name]["leaf"] = v5.genDict()
     with open("{}-{}".format(args.input.replace(".csv", ""), args.requirements), 'w') as f:
         json.dump(res, f, ensure_ascii=False, indent=4)
+    with open("tani/src/grade.json", 'w') as f:
+        json.dump(res, f, ensure_ascii=False, indent=4)
 
 def main():
     parser = argparse.ArgumentParser(description='This program is check that your credit can meet the graduation requirements.')

@@ -7,7 +7,7 @@ ITF の卒業要件を確認したい。(今はcoins20 だけ)
 # usage
 
 ```
-python3 main.py -i $(target csv file)
+python3 main.py -i target_csv_file
 ```
 
 で実行できます。
@@ -35,6 +35,18 @@ python3 main.py -i sample.csv -r coins20.json
 
 で予め用意されたサンプルで動作を確認することが出来ます。
 
+# viewer
+
+```
+python3 -s -i target_csv_file
+cd tani
+npm install
+npm start
+```
+
+[http://localhost:3001/](http://localhost:3001/) にアクセスすると確認できます。
+
 # image
 
-<img width="1358" alt="イメージ画像" src="https://user-images.githubusercontent.com/65126083/151887795-b8b7bca4-b8bc-4822-ad60-e7e721b23805.png">
+<img width="1358" alt="イメージ画像(CUI)" src="https://user-images.githubusercontent.com/65126083/151887795-b8b7bca4-b8bc-4822-ad60-e7e721b23805.png">
+<img width="1358" alt="イメージ画像(GUI)" src="https://user-images.githubusercontent.com/65126083/151948778-e73b5411-aa87-428e-abb0-2099e8a478e6.png">
