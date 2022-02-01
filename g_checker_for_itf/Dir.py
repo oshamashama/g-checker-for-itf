@@ -9,7 +9,8 @@ class DirResDict(TypedDict):
     now_certificated_credit_num: int
     feature_certificated_credit_num: int
     min_certificated_credit_num: int
-    leaf: "DirResDict"
+    # cyclic definition
+    leaf: "DirResDict"  # type: ignore[misc]
 
 
 class Dir(object):
