@@ -49,4 +49,4 @@ npm start
 # image
 
 <img width="1358" alt="イメージ画像(CUI)" src="https://user-images.githubusercontent.com/65126083/151887795-b8b7bca4-b8bc-4822-ad60-e7e721b23805.png">
-![image](https://user-images.githubusercontent.com/65126083/151951576-75853414-51ad-42b2-9173-3a862de9cff8.png)
+<img width="1358" alt="イメージ画像(GUI)" src="https://user-images.githubusercontent.com/65126083/151951576-75853414-51ad-42b2-9173-3a862de9cff8.png">
