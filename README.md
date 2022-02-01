@@ -15,6 +15,10 @@ python3 main.py -i target_csv_file
 `target csv file` は twins の成績ページからダウンロードしたファイル (UTF, CSV) を想定しています。
 
 ```
+usage: main.py [-h] [-i INPUT] [-r REQUIREMENTS] [-g] [-d] [-n] [-s] [-e]
+
+This program is check that your credit can meet the graduation requirements.
+
 options:
   -h, --help            show this help message and exit
   -i INPUT, --input INPUT
@@ -24,6 +28,8 @@ options:
   -g, --gpa             print GPA Flag
   -d, --drop            print drop credit unable Flag
   -n, --name            print name and id, able Flag
+  -s, --save            save as JSON, Flag
+  -e, --expect          count 履修中, Flag
 ```
 
 # test 
@@ -49,4 +55,4 @@ npm start
 # image
 
 <img width="1358" alt="イメージ画像(CUI)" src="https://user-images.githubusercontent.com/65126083/151887795-b8b7bca4-b8bc-4822-ad60-e7e721b23805.png">
-<img width="1358" alt="イメージ画像(GUI)" src="https://user-images.githubusercontent.com/65126083/151980981-3f7aa1e0-2a16-40d8-a243-615a3f736f9a.png">
+<img width="1358" alt="イメージ画像(GUI)" src="https://user-images.githubusercontent.com/65126083/151988273-44ae9485-3358-4e93-b28f-7686ae65fef5.png">
