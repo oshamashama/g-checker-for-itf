@@ -44,7 +44,7 @@ python3 main.py -i sample.csv -r coins20.json
 # viewer
 
 ```
-python3 -s -i target_csv_file
+python3 main.py -s -i target_csv_file
 cd tani
 npm install
 npm start
