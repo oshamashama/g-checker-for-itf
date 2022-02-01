@@ -2,6 +2,7 @@ import argparse
 import csv
 import json
 import re
+import shutil
 from typing import List, Tuple, TypedDict, cast
 from xmlrpc.client import boolean
 
@@ -40,6 +41,12 @@ OK_COLOR_STR = f"{Color.RESET}{Color.GREEN}{Color.BOLD}"
 FEATURE_COLOR_STR = f"{Color.RESET}{Color.CYAN}"
 FAIL_COLOR_STR = f"{Color.RESET}{Color.RED}{Color.BOLD}"
 RESET_COLOR_STR = f"{Color.RESET}"
+
+
+class GchkHelpFormatter(
+    argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter
+):
+    pass
 
 
 class DirResDict(TypedDict):
@@ -398,6 +405,15 @@ def parse_arg() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="gchk",
         description="This program is check that your credit can meet the graduation requirements.",
+        formatter_class=(
+            lambda prog: GchkHelpFormatter(
+                prog,
+                **{
+                    "width": shutil.get_terminal_size(fallback=(120, 50)).columns,
+                    "max_help_position": 30,
+                },
+            )
+        ),
     )
     parser.add_argument(
         "-i",
@@ -408,15 +424,11 @@ def parse_arg() -> argparse.Namespace:
     parser.add_argument(
         "-r", "--requirements", help="requirements file", default="coins20.json"
     )
-    parser.add_argument("-g", "--gpa", help="print GPA Flag", action="store_true")
-    parser.add_argument(
-        "-d", "--drop", help="print drop credit unable Flag", action="store_false"
-    )
-    parser.add_argument(
-        "-n", "--name", help="print name and id, able Flag", action="store_true"
-    )
-    parser.add_argument("-s", "--save", help="save as JSON, Flag", action="store_true")
-    parser.add_argument("-e", "--expect", help="count 履修中, Flag", action="store_true")
+    parser.add_argument("-g", "--gpa", help="print GPA", action="store_true")
+    parser.add_argument("-d", "--drop", help="print drop credit", action="store_false")
+    parser.add_argument("-n", "--name", help="print name and id", action="store_true")
+    parser.add_argument("-s", "--save", help="save as JSON", action="store_true")
+    parser.add_argument("-e", "--expect", help="count 履修中", action="store_true")
     parser.add_argument(
         "-V",
         "--version",
