@@ -222,7 +222,7 @@ class kamokuClass():
         self.course_name = all[3]
         self.credit = float(all[4])
         self.grade = all[7]
-        self.can_use = self.grade == "P" or self.grade == "A+" or self.grade == "A" or self.grade == "B" or self.grade == "C" or self.grade == "認"
+        self.can_use = self.grade == "P" or self.grade == "A+" or self.grade == "A" or self.grade == "B" or self.grade == "C" or self.grade == "認" or (self.grade == "履修中" and args.expect)
         self.used = False
         self.isCount = "C0" != all[8]
 
@@ -283,7 +283,6 @@ def readCSV(CSVFILENAME):
             t.course_number = "GB30601"
         if t.course_name == "情報理論" and t.course_number == "GB12501":
             t.course_number = "GB40601"
-    
     return memo
 
 
@@ -295,7 +294,6 @@ def readNameFromCSV(CSVFILENAME):
         for i, row in enumerate(reader):
             if i!=0:
                 return row[1]
-        # return reader[1][1]
 
 def genJSON(v0):
     res = {}
@@ -323,6 +321,7 @@ def main():
     parser.add_argument('-d', '--drop', help="print drop credit unable Flag", action="store_false")
     parser.add_argument('-n', '--name', help="print name and id, able Flag", action="store_true")
     parser.add_argument('-s', '--save', help="save as JSON, Flag", action="store_true")
+    parser.add_argument('-e', '--expect', help="count 履修中, Flag", action="store_true")
     global args
     args = parser.parse_args()
     
