@@ -8,7 +8,15 @@ ITF の卒業要件を確認したい。(今はcoins20 だけ)
 ## Usage
 
 ```bash
-python3 main.py -i target_csv_file
+git clone --depth 1 https://github.com/oshamashama/g-checker-for-itf
+cd g-checker-for-itf
+pip install .
+```
+
+で`gchk`コマンドをインストールできます。
+
+```bash
+gchk -i target_csv_file
 ```
 
 で実行できます。
@@ -37,7 +45,7 @@ optional arguments:
 ## Test
 
 ```bash
-python3 main.py -i sample.csv -r coins20.json
+gchk -i sample.csv -r coins20.json
 ```
 
 で予め用意されたサンプルで動作を確認することが出来ます。
@@ -45,7 +53,7 @@ python3 main.py -i sample.csv -r coins20.json
 ## Viewer
 
 ```bash
-python3 main.py -s -i target_csv_file
+gchk -s -i target_csv_file
 cd tani
 npm install
 npm start
