@@ -45,7 +45,8 @@
 .bl_tate {
     display: block;
     border: 1px solid cyan;
-    border-radius: 10px;
+    border-radius: 20px;
+    background-clip: border-box;
 }
 
 .con {
@@ -66,14 +67,14 @@ p {
     width: 400px;
 }
 
-.passed {
+.passed.bl_tate {
     background-color: rgba(0, 69, 90);
 }
 
-.expect {
+.expect.bl_tate {
     background-color: rgb(89, 90, 0);
 }
 
-.failed {
+.failed.bl_tate {
     background-color: rgba(90, 41, 0);
 }

@@ -11,7 +11,9 @@ class Table extends React.Component {
         let itemList = []
         for (const key in this.props.value) {
             let pushStr = ' ' + (this.props.value[key]['now_certificated_credit_num'])
-                + ' / '
+                + '('
+                + this.props.value[key]['feature_certificated_credit_num']
+                + ')/'
                 + (this.props.value[key]['min_certificated_credit_num'])
             let passed = ""
             if (this.props.value[key]['now_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
