@@ -281,7 +281,7 @@
                                         "max_certificated_credit_num": 10000,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
-                                            "regexp_number": "aaa",
+                                            "regexp_number": "^[2345].*$",
                                             "regexp_name": ""
                                         }
                                     }
