@@ -5,16 +5,12 @@ from cgitb import reset
 from mimetypes import init
 import sys
 import csv
-import pprint
 import re
-from tabnanny import check
 from tokenize import String
-from unicodedata import name
-from turtle import color
-from xml.sax.handler import feature_external_ges
 from xmlrpc.client import boolean
+import json
+import argparse
 
-from numpy import number
 MAX = 10000
 
 
@@ -154,7 +150,8 @@ class RecognizedFilter():
                         feature_credit += kamoku.credit
                         res_course_name.append("{}{}{}".format(FEATURE_COLOR_STR, kamoku.course_name, Color.RESET))
                     else:
-                        res_course_name.append("{}{}{}".format(Color.RED, kamoku.course_name, Color.RESET))
+                        if args.drop:
+                            res_course_name.append("{}{}{}".format(Color.RED, kamoku.course_name, Color.RESET))
         return res_credit, res_course_name, feature_credit
     
     def print_son(self, depth):
@@ -181,197 +178,23 @@ class Level1(Dir):
     def __init__(self, name, max, min):
         super().__init__(name, max, min, True, 1)
 
-def genCoins20() -> Level1:
-    all = Level1("情報科学類", 125, 125)
-    all.add(Level2("専門", 52, 52))
-    all.course_filter["専門"].add(Level3("", 52, 52))
-    all.course_filter["専門"].course_filter[""].add(Level4("必修", 16, 16))
-    all.course_filter["専門"].course_filter[""].course_filter["必修"].add(Level5("主専攻実験Ａ／Ｂ", 6, 6))
-    all.course_filter["専門"].course_filter[""].course_filter["必修"].course_filter["主専攻実験Ａ／Ｂ"].add(RecognizedFilter(
-        "主専攻実験Ａ／Ｂ",
-        r"^GB[234]6[45]03$",
-        r""
-    ))
-    all.course_filter["専門"].course_filter[""].course_filter["必修"].add(Level5("卒業研究Ａ／Ｂ", 6, 6))
-    all.course_filter["専門"].course_filter[""].course_filter["必修"].course_filter["卒業研究Ａ／Ｂ"].add(RecognizedFilter(
-        "卒業研究Ａ／Ｂ",
-        r"^GB199[4589]8$",
-        r""
-    ))
-    all.course_filter["専門"].course_filter[""].course_filter["必修"].add(Level5("専門語学Ａ／Ｂ", 4, 4))
-    all.course_filter["専門"].course_filter[""].course_filter["必修"].course_filter["専門語学Ａ／Ｂ"].add(RecognizedFilter(
-        "専門語学Ａ／Ｂ",
-        r"^GB190[4578]1$",
-        r""
-    ))
-    all.course_filter["専門"].course_filter[""].add(Level4("選択", 36, 36))
-    all.course_filter["専門"].course_filter[""].course_filter["選択"].add(Level5("ＧＢｘ０～", MAX, 18))
-    all.course_filter["専門"].course_filter[""].course_filter["選択"].course_filter["ＧＢｘ０～"].add(RecognizedFilter(
-        "ＧＢｘ０～",
-        r"^GB[234]0.*$",
-        r""
-    ))
-    all.course_filter["専門"].course_filter[""].course_filter["選択"].add(Level5("ＧＢ２３４／ジョットク", 18, 0))
-    all.course_filter["専門"].course_filter[""].course_filter["選択"].course_filter["ＧＢ２３４／ジョットク"].add(RecognizedFilter(
-        "ＧＢ２３４／ジョットク",
-        r"^GB[234][^0].*$",
-        r"^情報.*特別.*演習"
-    ))
-    all.add(Level2("専門基礎", 50, 50))
-    all.course_filter["専門基礎"].add(Level3("", 50, 50))
-    all.course_filter["専門基礎"].course_filter[""].add(Level4("必修", 26, 26))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("線形代数Ａ", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["線形代数Ａ"].add(RecognizedFilter(
-        "線形代数Ａ",
-        r"",
-        r"^線形代数A$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("線形代数Ｂ", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["線形代数Ｂ"].add(RecognizedFilter(
-        "線形代数Ｂ",
-        r"",
-        r"^線形代数B$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("微分積分Ａ", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["微分積分Ａ"].add(RecognizedFilter(
-        "微分積分Ａ",
-        r"",
-        r"^微分積分A$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("微分積分Ｂ", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["微分積分Ｂ"].add(RecognizedFilter(
-        "微分積分Ｂ",
-        r"",
-        r"^微分積分B$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("情報数学Ａ", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["情報数学Ａ"].add(RecognizedFilter(
-        "情報数学Ａ",
-        r"",
-        r"^情報数学A$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("専門英語基礎", 1, 1))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["専門英語基礎"].add(RecognizedFilter(
-        "専門英語基礎",
-        r"",
-        r"^専門英語基礎$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("プロ入", 3, 3))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["プロ入"].add(RecognizedFilter(
-        "プロ入",
-        r"",
-        r"^プログラミング入門$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("コンプロ", 3, 3))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["コンプロ"].add(RecognizedFilter(
-        "コンプロ",
-        r"",
-        r"^コンピュータとプログラミング$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("ＤＳＡ", 3, 3))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["ＤＳＡ"].add(RecognizedFilter(
-        "ＤＳＡ",
-        r"",
-        r"^データ構造とアルゴリズム$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("ＤＳＡＬ", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["ＤＳＡＬ"].add(RecognizedFilter(
-        "ＤＳＡＬ",
-        r"",
-        r"^データ構造とアルゴリズム実験$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("論理回路", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["論理回路"].add(RecognizedFilter(
-        "論理回路",
-        r"",
-        r"^論理回路$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].add(Level5("論理回路演習", 2, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["必修"].course_filter["論理回路演習"].add(RecognizedFilter(
-        "論理回路演習",
-        r"",
-        r"^(論理回路演習|論理回路実験)$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].add(Level4("選択", 24, 24))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].add(Level5("実質必修のやつ", MAX, 10))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].course_filter["実質必修のやつ"].add(RecognizedFilter(
-        "実質必修のやつ",
-        r"",
-        r"^(確率論|統計学|数値計算法|論理と形式化|電磁気学|論理システム|論理システム演習)$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].add(Level5("ＣＳ　ｉｎ　Ｅｎｇｌｉｓｈ", MAX, 2))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].course_filter["ＣＳ　ｉｎ　Ｅｎｇｌｉｓｈ"].add(RecognizedFilter(
-        "ＣＳ　ｉｎ　Ｅｎｇｌｉｓｈ",
-        r"",
-        r"^Computer.*Science.*in.*English.*[AB]$"
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].add(Level5("ＧＢ１～", MAX, 0))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].course_filter["ＧＢ１～"].add(RecognizedFilter(
-        "ＧＢ１～",
-        r"^GB1.*$",
-        r""
-    ))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].add(Level5("ＧＡ１～", MAX, 8))
-    all.course_filter["専門基礎"].course_filter[""].course_filter["選択"].course_filter["ＧＡ１～"].add(RecognizedFilter(
-        "ＧＡ１～",
-        r"^GA1.*$",
-        r""
-    ))
-    all.add(Level2("基礎", 23, 23))
-    all.course_filter["基礎"].add(Level3("共通", 17, 13))
-    all.course_filter["基礎"].course_filter["共通"].add(Level4("必修", 12, 12))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].add(Level5("総合科目", 2, 2))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].course_filter["総合科目"].add(RecognizedFilter(
-        "総合科目",
-        r"",
-        r"^(学問への誘い|フレッシュマン・セミナー)$"
-    ))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].add(Level5("体育", 2, 2))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].course_filter["体育"].add(RecognizedFilter(
-        "体育",
-        r"^2[12].*$",
-        r""
-    ))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].add(Level5("外国語（英語）", 4, 4))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].course_filter["外国語（英語）"].add(RecognizedFilter(
-        "外国語（英語）",
-        r"^31.*$",
-        r"(^English Presentation Skills I+$)"
-    ))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].add(Level5("情報", 4, 4))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["必修"].course_filter["情報"].add(RecognizedFilter(
-        "情報",
-        r"^6.*$",
-        r""
-    ))
-    all.course_filter["基礎"].course_filter["共通"].add(Level4("選択", 5, 1))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["選択"].add(Level5("総合科目（学士基盤科目）", MAX, 1))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["選択"].course_filter["総合科目（学士基盤科目）"].add(RecognizedFilter(
-        "総合科目（学士基盤科目）",
-        r"^1.*$",
-        r""
-    ))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["選択"].add(Level5("体育／外国語／国語／芸術", MAX, 0))
-    all.course_filter["基礎"].course_filter["共通"].course_filter["選択"].course_filter["体育／外国語／国語／芸術"].add(RecognizedFilter(
-        "体育／外国語／国語／芸術",
-        r"aaa",
-        r""
-    ))
-    all.course_filter["基礎"].add(Level3("関連", 10, 6))
-    all.course_filter["基礎"].course_filter["関連"].add(Level4("必修", 0, 0))
-    all.course_filter["基礎"].course_filter["関連"].add(Level4("選択", 10, 6))
-    all.course_filter["基礎"].course_filter["関連"].course_filter["選択"].add(Level5("Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ以外始まり", MAX, 6))
-    all.course_filter["基礎"].course_filter["関連"].course_filter["選択"].course_filter["Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ以外始まり"].add(RecognizedFilter(
-        "Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ以外始まり",
-        r"^[^EFGH1-9].*$",
-        r""
-    ))
-    all.course_filter["基礎"].course_filter["関連"].course_filter["選択"].add(Level5("Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ始まり", 4, 0))
-    all.course_filter["基礎"].course_filter["関連"].course_filter["選択"].course_filter["Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ始まり"].add(RecognizedFilter(
-        "Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ始まり",
-        r"^([EFH]|GC|GE).*$",
-        r""
-    ))
+def parseJSON(CSVFILENAME) -> Level1:
+    with open(CSVFILENAME, 'r') as f:
+        data = json.load(f)
+    MAX_STR = "max_certificated_credit_num"
+    MIN_STR = "min_certificated_credit_num"
+    for k1, v1 in data.items():
+        all = Level1(k1, v1[MAX_STR], v1[MIN_STR])
+        for k2, v2 in v1["leaf"].items():
+            all.add(Level2(k2, v2[MAX_STR], v2[MIN_STR]))
+            for k3, v3 in v2["leaf"].items():
+                all.course_filter[k2].add(Level3(k3, v3[MAX_STR], v3[MIN_STR]))
+                for k4, v4 in v3["leaf"].items():
+                    all.course_filter[k2].course_filter[k3].add(Level4(k4, v4[MAX_STR], v4[MIN_STR]))
+                    for k5, v5 in v4["leaf"].items():
+                        all.course_filter[k2].course_filter[k3].course_filter[k4].add(Level5(k5, v5[MAX_STR], v5[MIN_STR]))
+                        all.course_filter[k2].course_filter[k3].course_filter[k4].course_filter[k5].add(RecognizedFilter(k5,v5["leaf"]["regexp_number"],v5["leaf"]["regexp_name"]))
+    
     return all
 
 
@@ -482,13 +305,27 @@ def genJSON(v0):
     return json.dumps(res, ensure_ascii=False, indent=4)
 
 def main():
-    args = sys.argv
-    CSVFILENAME = ""
+    parser = argparse.ArgumentParser(description='This program is check that your credit can meet the graduation requirements.')
+    parser.add_argument('-i', '--input', help="target file from twins (UTF-8, CSV)", default="sample.csv")
+    parser.add_argument('-r', '--requirements', help="requirements file", default="coins20.json")
+    parser.add_argument('-g', '--gpa', help="print GPA Flag", action="store_true")
+    parser.add_argument('-d', '--drop', help="print drop credit unable Flag", action="store_false")
+    parser.add_argument('-n', '--name', help="print name and id, able Flag", action="store_true")
+    global args
+    args = parser.parse_args()
+    
+    CSVFILENAME = args.input
+    JSONFILENAME = args.requirements
 
-    # coins20.print_son()
-    print(genJSON(genCoins20()))
+    coins20 = parseJSON(JSONFILENAME)
+    if args.name:
+        print(CSVFILENAME, readNameFromCSV(CSVFILENAME))
+    kamoku = readCSV(CSVFILENAME)
+    coins20.check(kamoku)
+    coins20.print_son()
+    if args.gpa:
+        gp(kamoku)
     
 
 if __name__ == '__main__':
     main()
-    
