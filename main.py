@@ -96,6 +96,7 @@ class Dir():
         res = {
             "max_certificated_credit_num":self.max_certificated_credit_num,
             "now_certificated_credit_num":self.now_certificated_credit_num,
+            "feature_certificated_credit_num":self.feature_certificated_credit_num,
             "min_certificated_credit_num":self.min_certificated_credit_num,
             "leaf":{}
         }

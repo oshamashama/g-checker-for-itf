@@ -16,6 +16,8 @@ class Table extends React.Component {
             let passed = ""
             if (this.props.value[key]['now_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
                 passed = "passed"
+            else if (this.props.value[key]['now_certificated_credit_num'] + this.props.value[key]['feature_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
+                passed = "expect"
             else
                 passed = "failed"
             itemList.push([key, pushStr, passed])

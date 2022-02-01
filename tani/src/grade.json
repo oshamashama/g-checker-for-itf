@@ -1,27 +1,32 @@
 {
     "情報科学類": {
         "max_certificated_credit_num": 125,
-        "now_certificated_credit_num": 68.5,
+        "now_certificated_credit_num": 67.5,
+        "feature_certificated_credit_num": 9.0,
         "min_certificated_credit_num": 125,
         "leaf": {
             "専門": {
                 "max_certificated_credit_num": 52,
                 "now_certificated_credit_num": 15.0,
+                "feature_certificated_credit_num": 2.0,
                 "min_certificated_credit_num": 52,
                 "leaf": {
                     "": {
                         "max_certificated_credit_num": 52,
                         "now_certificated_credit_num": 15.0,
+                        "feature_certificated_credit_num": 2.0,
                         "min_certificated_credit_num": 52,
                         "leaf": {
                             "必修": {
                                 "max_certificated_credit_num": 16,
                                 "now_certificated_credit_num": 3.0,
+                                "feature_certificated_credit_num": 0,
                                 "min_certificated_credit_num": 16,
                                 "leaf": {
                                     "主専攻実験Ａ／Ｂ": {
                                         "max_certificated_credit_num": 6,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 6,
                                         "leaf": {
                                             "regexp_number": "^GB[234]6[45]03$",
@@ -31,6 +36,7 @@
                                     "卒業研究Ａ／Ｂ": {
                                         "max_certificated_credit_num": 6,
                                         "now_certificated_credit_num": 3.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 6,
                                         "leaf": {
                                             "regexp_number": "^GB199[4589]8$",
@@ -40,6 +46,7 @@
                                     "専門語学Ａ／Ｂ": {
                                         "max_certificated_credit_num": 4,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 4,
                                         "leaf": {
                                             "regexp_number": "^GB190[4578]1$",
@@ -51,11 +58,13 @@
                             "選択": {
                                 "max_certificated_credit_num": 36,
                                 "now_certificated_credit_num": 12.0,
+                                "feature_certificated_credit_num": 2.0,
                                 "min_certificated_credit_num": 36,
                                 "leaf": {
                                     "ＧＢｘ０～": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 9.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 18,
                                         "leaf": {
                                             "regexp_number": "^GB[234]0.*$",
@@ -65,6 +74,7 @@
                                     "ＧＢ２３４／ジョットク": {
                                         "max_certificated_credit_num": 18,
                                         "now_certificated_credit_num": 3.0,
+                                        "feature_certificated_credit_num": 2.0,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "^GB[234][^0].*$",
@@ -80,21 +90,25 @@
             "専門基礎": {
                 "max_certificated_credit_num": 50,
                 "now_certificated_credit_num": 42.0,
+                "feature_certificated_credit_num": 4.0,
                 "min_certificated_credit_num": 50,
                 "leaf": {
                     "": {
                         "max_certificated_credit_num": 50,
                         "now_certificated_credit_num": 42.0,
+                        "feature_certificated_credit_num": 4.0,
                         "min_certificated_credit_num": 50,
                         "leaf": {
                             "必修": {
                                 "max_certificated_credit_num": 26,
                                 "now_certificated_credit_num": 20.0,
+                                "feature_certificated_credit_num": 2.0,
                                 "min_certificated_credit_num": 26,
                                 "leaf": {
                                     "線形代数Ａ": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 2.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -104,6 +118,7 @@
                                     "線形代数Ｂ": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 2.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -113,6 +128,7 @@
                                     "微分積分Ａ": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 2.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -122,6 +138,7 @@
                                     "微分積分Ｂ": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 2.0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -131,6 +148,7 @@
                                     "情報数学Ａ": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -140,6 +158,7 @@
                                     "専門英語基礎": {
                                         "max_certificated_credit_num": 1,
                                         "now_certificated_credit_num": 1.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 1,
                                         "leaf": {
                                             "regexp_number": "",
@@ -149,6 +168,7 @@
                                     "プロ入": {
                                         "max_certificated_credit_num": 3,
                                         "now_certificated_credit_num": 3.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 3,
                                         "leaf": {
                                             "regexp_number": "",
@@ -158,6 +178,7 @@
                                     "コンプロ": {
                                         "max_certificated_credit_num": 3,
                                         "now_certificated_credit_num": 3.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 3,
                                         "leaf": {
                                             "regexp_number": "",
@@ -167,6 +188,7 @@
                                     "ＤＳＡ": {
                                         "max_certificated_credit_num": 3,
                                         "now_certificated_credit_num": 3.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 3,
                                         "leaf": {
                                             "regexp_number": "",
@@ -176,6 +198,7 @@
                                     "ＤＳＡＬ": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -185,6 +208,7 @@
                                     "論理回路": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 2.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -194,6 +218,7 @@
                                     "論理回路演習": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 2.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -205,11 +230,13 @@
                             "選択": {
                                 "max_certificated_credit_num": 24,
                                 "now_certificated_credit_num": 22.0,
+                                "feature_certificated_credit_num": 2.0,
                                 "min_certificated_credit_num": 24,
                                 "leaf": {
                                     "実質必修のやつ": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 9.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 10,
                                         "leaf": {
                                             "regexp_number": "",
@@ -219,6 +246,7 @@
                                     "ＣＳ　ｉｎ　Ｅｎｇｌｉｓｈ": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -228,6 +256,7 @@
                                     "ＧＢ１～": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 7.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "^GB1.*$",
@@ -237,6 +266,7 @@
                                     "ＧＡ１～": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 6.0,
+                                        "feature_certificated_credit_num": 2.0,
                                         "min_certificated_credit_num": 8,
                                         "leaf": {
                                             "regexp_number": "^GA1.*$",
@@ -251,22 +281,26 @@
             },
             "基礎": {
                 "max_certificated_credit_num": 23,
-                "now_certificated_credit_num": 11.5,
+                "now_certificated_credit_num": 10.5,
+                "feature_certificated_credit_num": 3.0,
                 "min_certificated_credit_num": 23,
                 "leaf": {
                     "共通": {
                         "max_certificated_credit_num": 17,
-                        "now_certificated_credit_num": 5.5,
+                        "now_certificated_credit_num": 4.5,
+                        "feature_certificated_credit_num": 3.0,
                         "min_certificated_credit_num": 13,
                         "leaf": {
                             "必修": {
                                 "max_certificated_credit_num": 12,
                                 "now_certificated_credit_num": 4.5,
+                                "feature_certificated_credit_num": 2.0,
                                 "min_certificated_credit_num": 12,
                                 "leaf": {
                                     "総合科目": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 1.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
@@ -276,6 +310,7 @@
                                     "体育": {
                                         "max_certificated_credit_num": 2,
                                         "now_certificated_credit_num": 0.5,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "^2[12].*$",
@@ -285,6 +320,7 @@
                                     "外国語（英語）": {
                                         "max_certificated_credit_num": 4,
                                         "now_certificated_credit_num": 2.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 4,
                                         "leaf": {
                                             "regexp_number": "^31.*$",
@@ -294,6 +330,7 @@
                                     "情報": {
                                         "max_certificated_credit_num": 4,
                                         "now_certificated_credit_num": 1.0,
+                                        "feature_certificated_credit_num": 2.0,
                                         "min_certificated_credit_num": 4,
                                         "leaf": {
                                             "regexp_number": "^6.*$",
@@ -304,12 +341,14 @@
                             },
                             "選択": {
                                 "max_certificated_credit_num": 5,
-                                "now_certificated_credit_num": 1.0,
+                                "now_certificated_credit_num": 0,
+                                "feature_certificated_credit_num": 1.0,
                                 "min_certificated_credit_num": 1,
                                 "leaf": {
                                     "総合科目（学士基盤科目）": {
                                         "max_certificated_credit_num": 10000,
-                                        "now_certificated_credit_num": 1.0,
+                                        "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 1.0,
                                         "min_certificated_credit_num": 1,
                                         "leaf": {
                                             "regexp_number": "^1.*$",
@@ -319,6 +358,7 @@
                                     "体育／外国語／国語／芸術": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "aaa",
@@ -332,22 +372,26 @@
                     "関連": {
                         "max_certificated_credit_num": 10,
                         "now_certificated_credit_num": 6.0,
+                        "feature_certificated_credit_num": 0,
                         "min_certificated_credit_num": 6,
                         "leaf": {
                             "必修": {
                                 "max_certificated_credit_num": 0,
                                 "now_certificated_credit_num": 0,
+                                "feature_certificated_credit_num": 0,
                                 "min_certificated_credit_num": 0,
                                 "leaf": {}
                             },
                             "選択": {
                                 "max_certificated_credit_num": 10,
                                 "now_certificated_credit_num": 6.0,
+                                "feature_certificated_credit_num": 0,
                                 "min_certificated_credit_num": 6,
                                 "leaf": {
                                     "Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ以外始まり": {
                                         "max_certificated_credit_num": 10000,
                                         "now_certificated_credit_num": 6.0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 6,
                                         "leaf": {
                                             "regexp_number": "^[^EFGH1-9].*$",
@@ -357,6 +401,7 @@
                                     "Ｅ，Ｆ，Ｇ，Ｈ，ＧＣ，ＧＥ，Ｈ始まり": {
                                         "max_certificated_credit_num": 4,
                                         "now_certificated_credit_num": 0,
+                                        "feature_certificated_credit_num": 0,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "^([EFH]|GC|GE).*$",

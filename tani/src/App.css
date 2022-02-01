@@ -70,6 +70,10 @@ p {
     background-color: rgba(0, 69, 90);
 }
 
+.expect {
+    background-color: rgb(89, 90, 0);
+}
+
 .failed {
     background-color: rgba(90, 41, 0);
 }
