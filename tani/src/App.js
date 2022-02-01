@@ -28,7 +28,7 @@ class Table extends React.Component {
             return (
                 <div className='con'>
                     {itemList.map(([key, st, passed]) => (
-                        <div className={'bl_tate ' + passed} key={key}>
+                        <div className={'bl_tate ' + passed} key={key + st}>
                             <p className='hight-center last-leaf'>
                                 {(key === "" ? "" : key) + st}
                             </p>
@@ -41,8 +41,8 @@ class Table extends React.Component {
         return (
             <div className='con'>
                 {itemList.map(([key, st, passed]) => (
-                    <div className={'gre_yoko ' + passed} key={key}>
-                        <div className={'bl_tate ' + passed} key={key}>
+                    <div className={'gre_yoko ' + passed} key={key + st}>
+                        <div className={'bl_tate ' + passed} key={key + st + 'top'}>
                             <p className='hight-center'>
                                 {(key === "" ? "" : key)}
                             </p>
@@ -50,7 +50,7 @@ class Table extends React.Component {
                                 {st}
                             </p>
                         </div>
-                        <div className={'bl_tate2 ' + passed} key={key}>
+                        <div className={'bl_tate2 ' + passed} key={key + st}>
                             <Table value={this.props.value[key]['leaf']} depth={this.props.depth - 1} />
                         </div>
                     </div>
