@@ -21,7 +21,7 @@ class GchkHelpFormatter(
 def parse_arg() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="gchk",
-        description="A checker that your credit can meet the graduation requirements.",
+        description="A checker if your credits meet the graduation requirements or not.",
         formatter_class=(
             lambda prog: GchkHelpFormatter(
                 prog,

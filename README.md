@@ -27,7 +27,7 @@ gchk -i target_csv_file
 $ gchk
 usage: gchk [-h] [-i INPUT] [-r REQUIREMENTS] [-g] [-d] [-n] [-s] [-e] [-V]
 
-A checker that your credit can meet the graduation requirements
+A checker if your credits meet the graduation requirements or not.
 
 optional arguments:
   -h, --help                  show this help message and exit
