@@ -404,7 +404,7 @@ def genJSON(v0: Level1) -> None:
 def parse_arg() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="gchk",
-        description="This program is check that your credit can meet the graduation requirements.",
+        description="A checker that your credit can meet the graduation requirements.",
         formatter_class=(
             lambda prog: GchkHelpFormatter(
                 prog,
