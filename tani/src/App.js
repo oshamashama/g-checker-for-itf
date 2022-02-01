@@ -8,16 +8,11 @@ import { useTable } from "react-table";
 
 class Table extends React.Component {
     render() {
-        function zeroPadding(str) {
-            return ('   ' + str).slice(-3);
-        }
-
-
         let itemList = []
         for (const key in this.props.value) {
-            let pushStr = zeroPadding(this.props.value[key]['now_certificated_credit_num'])
-                + '/'
-                + zeroPadding(this.props.value[key]['min_certificated_credit_num'])
+            let pushStr = ' ' + (this.props.value[key]['now_certificated_credit_num'])
+                + ' / '
+                + (this.props.value[key]['min_certificated_credit_num'])
             let passed = ""
             if (this.props.value[key]['now_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
                 passed = "passed"
@@ -30,9 +25,8 @@ class Table extends React.Component {
                 <div className='con'>
                     {itemList.map(([key, st, passed]) => (
                         <div className={'bl_tate ' + passed} key={key}>
-                            <p className='hight-center'>
-                                {(key === "" ? "　　　　" : (key !== "専門基礎" ? "　" + key + "　" : key))
-                                    + st}
+                            <p className='hight-center last-leaf'>
+                                {(key === "" ? "" : key) + st}
                             </p>
                         </div>
                     ))}
@@ -46,11 +40,13 @@ class Table extends React.Component {
                     <div className={'gre_yoko ' + passed} key={key}>
                         <div className={'bl_tate ' + passed} key={key}>
                             <p className='hight-center'>
-                                {(key === "" ? "　　　　" : (key !== "専門基礎" ? "　" + key + "　" : key))
-                                    + st}
+                                {(key === "" ? "" : key)}
+                            </p>
+                            <p className='hight-center'>
+                                {st}
                             </p>
                         </div>
-                        <div className={'bl_tate ' + passed} key={key}>
+                        <div className={'bl_tate2 ' + passed} key={key}>
                             <Table value={this.props.value[key]['leaf']} depth={this.props.depth - 1} />
                         </div>
                     </div>

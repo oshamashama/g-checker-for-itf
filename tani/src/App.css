@@ -44,31 +44,32 @@
 
 .bl_tate {
     display: block;
-    /* width: auto; */
-    /* min-width: 5cm; */
-    /* background-color: #61dafb; */
-    /* padding: 20px; */
-    /* margin: 10px; */
-    /* border-radius: 5px; */
     border: 1px solid cyan;
     border-radius: 10px;
 }
 
+.con {
+    margin: 0%;
+}
+
 .hight-center {
     padding: 2px;
-    width: auto;
-    /* box-sizing: border-box; */
 }
 
 p {
+    width: 100px;
     margin: 0%;
     font-size: medium;
 }
 
+.last-leaf {
+    width: 400px;
+}
+
 .passed {
-    background-color: rgb(19, 59, 19);
+    background-color: rgba(0, 69, 90);
 }
 
 .failed {
-    background-color: rgb(46, 25, 25);
+    background-color: rgba(90, 41, 0);
 }
