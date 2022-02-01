@@ -5,6 +5,8 @@ import re
 from typing import List, Tuple, TypedDict, cast
 from xmlrpc.client import boolean
 
+from g_checker_for_itf import __version__
+
 MAX = 10000
 
 
@@ -113,7 +115,7 @@ class Dir:
             print(
                 f"{OK_COLOR_STR}{r_pad}{l_pad}",
                 f"{self.now_certificated_credit_num:5.1f}{FEATURE_COLOR_STR}"
-                f"({credit_total:5.1f}{RESET_COLOR_STR}",
+                f"({credit_total:5.1f}){OK_COLOR_STR}/{self.min_certificated_credit_num:5.1f}{RESET_COLOR_STR}",
             )
         else:
             print(
@@ -286,7 +288,8 @@ def parseJSON(JSONFILENAME: str) -> Level1:
     if len(data) == 0:
         raise ValueError("json data is empty")
     else:
-        init_k1, init_v1 = data.items()[0]
+        first_key, *_ = data
+        init_k1, init_v1 = first_key, data[first_key]
         all = Level1(init_k1, init_v1[MAX_STR], init_v1[MIN_STR])
 
     for k1, v1 in data.items():
@@ -319,23 +322,12 @@ def parseJSON(JSONFILENAME: str) -> Level1:
 def gp(ls: List[KamokuClass]) -> None:
     gps = 0.0
     credit_sum = 0.0
-    for kam in ls:
-        if kam.can_use and kam.isCount:
-            if kam.grade == "A+":
-                gps += 4.3 * kam.credit
-                credit_sum += kam.credit
-            if kam.grade == "A":
-                gps += 4 * kam.credit
-                credit_sum += kam.credit
-            if kam.grade == "B":
-                gps += 3 * kam.credit
-                credit_sum += kam.credit
-            if kam.grade == "C":
-                gps += 2 * kam.credit
-                credit_sum += kam.credit
-            if kam.grade == "D":
-                credit_sum += kam.credit
-
+    grade_points = {"A+": 4.3, "A": 4, "B": 3, "C": 2, "D": 1}
+    target_kams = [kam for kam in ls if kam.can_use and kam.isCount]
+    for kam in target_kams:
+        for grade, point in grade_points.items():
+            if kam.grade == grade:
+                credit_sum += point * kam.credit
     print(
         "GPA = GPS/CreditSum : {:1.5} = {}/{}".format(gps / credit_sum, gps, credit_sum)
     )
@@ -404,7 +396,8 @@ def genJSON(v0: Level1) -> None:
 
 def parse_arg() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="This program is check that your credit can meet the graduation requirements."
+        prog="gchk",
+        description="This program is check that your credit can meet the graduation requirements.",
     )
     parser.add_argument(
         "-i",
@@ -424,6 +417,12 @@ def parse_arg() -> argparse.Namespace:
     )
     parser.add_argument("-s", "--save", help="save as JSON, Flag", action="store_true")
     parser.add_argument("-e", "--expect", help="count 履修中, Flag", action="store_true")
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version="%(prog)s {}".format(__version__),
+    )
     return parser.parse_args()
 
 
