@@ -1,81 +1,81 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .gre_yoko {
-    display: flex;
+  display: flex;
 }
 
 .bl_tate {
-    display: block;
-    margin: 1px;
-    border: 1px solid cyan;
-    border-radius: 15px;
-    background-clip: border-box;
+  display: block;
+  margin: 1px;
+  border: 1px solid cyan;
+  border-radius: 15px;
+  background-clip: border-box;
 }
 
 .con {
-    margin: 0%;
+  margin: 0%;
 }
 
 .hight-center {
-    padding: 2px;
+  padding: 2px;
 }
 
 p {
-    width: 100px;
-    margin: 0%;
-    font-size: medium;
+  width: 100px;
+  margin: 0%;
+  font-size: medium;
 }
 
 .last-leaf {
-    width: 400px;
+  width: 400px;
 }
 
 .passed.bl_tate {
-    background-color: rgba(0, 69, 90);
+  background-color: rgba(0, 69, 90);
 }
 
 .expect.bl_tate {
-    background-color: rgb(89, 90, 0);
+  background-color: rgb(89, 90, 0);
 }
 
 .failed.bl_tate {
-    background-color: rgba(90, 41, 0);
+  background-color: rgba(90, 41, 0);
 }
