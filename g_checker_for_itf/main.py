@@ -172,8 +172,8 @@ def genJSON(v0: Level1, input_csv: str, requirements: str) -> None:
     basename = input_csv.replace(".csv", "")
     with open(f"{basename}-{requirements}", "w") as f:
         json.dump(res, f, ensure_ascii=False, indent=4)
-    with open("tani/src/grade.json", "w") as f:
-        json.dump(res, f, ensure_ascii=False, indent=4)
+    # with open("tani/src/grade.json", "w") as f:
+    #     json.dump(res, f, ensure_ascii=False, indent=4)
 
 
 def main() -> None:
