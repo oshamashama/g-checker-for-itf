@@ -95,7 +95,7 @@ def parseJSON(JSONFILENAME: str) -> Level1:
 def gp(ls: List[KamokuClass]) -> None:
     gps = 0.0
     credit_sum = 0.0
-    grade_points = {"A+": 4.3, "A": 4, "B": 3, "C": 2, "D": 1}
+    grade_points = {"A+": 4.3, "A": 4, "B": 3, "C": 2, "D": 0}
     target_kams = [kam for kam in ls if kam.can_use and kam.isCount]
     for kam in target_kams:
         for grade, point in grade_points.items():
