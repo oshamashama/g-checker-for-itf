@@ -100,7 +100,8 @@ def gp(ls: List[KamokuClass]) -> None:
     for kam in target_kams:
         for grade, point in grade_points.items():
             if kam.grade == grade:
-                credit_sum += point * kam.credit
+                gps += point * kam.credit
+                credit_sum += kam.credit
     gpa = gps / credit_sum
     print(f"GPA = GPS/CreditSum : {gpa:1.5} = {gps}/{credit_sum}")
 
