@@ -1,11 +1,13 @@
 <!-- markdownlint-disable MD033 -->
 # g-checker-for-itf
 
-ITF の卒業要件を確認したい。(今はcoins20 だけ)
+ITF の卒業要件を確認したい。(今は coins19/coins20/coins21, mast20 だけ)
 
 提供されているプログラム、またそのプログラムによる実行結果に関する保証はできかねます。
 
-## Usage
+## Install
+
+### Clone Repository
 
 ```bash
 git clone --depth 1 https://github.com/oshamashama/g-checker-for-itf
@@ -13,14 +15,31 @@ cd g-checker-for-itf
 pip install .
 ```
 
-で`gchk`コマンドをインストールできます。
+### pip install
 
 ```bash
-gchk -i target_csv_file
+pip install g-checker-for-itf
+```
+
+のいずれかで`gchk`コマンドをインストールできます。
+今時点で要件確認のためのファイルをこのリポジトリからダウンロードしてくる必要があるため、 Clone によるインストールを推奨します。
+
+#### Get Requirements File
+
+```bash
+wget https://raw.githubusercontent.com/oshamashama/g-checker-for-itf/main/coins20.json
+```
+
+などで卒業要件を定義したファイルをダウンロードしてきてください。
+
+## Usage
+
+```bash
+gchk -i target_csv_file -r requirements_json_file
 ```
 
 で実行できます。
-複数ファイルを引数に与えることができ、その場合は連続して判定が行なわれます。
+
 `target csv file` は twins の成績ページからダウンロードしたファイル (UTF, CSV) を想定しています。
 
 ```shellsession
@@ -50,10 +69,19 @@ gchk -i sample.csv -r coins20.json
 
 で予め用意されたサンプルで動作を確認することが出来ます。
 
+```bash
+wget https://raw.githubusercontent.com/oshamashama/g-checker-for-itf/main/coins20.json
+wget https://raw.githubusercontent.com/oshamashama/g-checker-for-itf/main/sample.csv
+```
+
+
 ## Viewer
+
+現状、このリポジトリを clone することが必要です。
 
 ```bash
 gchk -s -i target_csv_file
+cp saved_file ~/g-checker-for-itf/tani/src/grade.json
 cd tani
 npm install
 npm start
