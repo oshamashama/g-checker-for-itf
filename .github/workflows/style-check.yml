@@ -1,5 +1,11 @@
 name: Style Check
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
   python-style-check:
     runs-on: ubuntu-latest
