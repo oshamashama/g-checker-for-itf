@@ -49,7 +49,7 @@ class Dir(object):
                 f"({credit_total:5.1f}){FAIL_COLOR_STR}/{self.min_certificated_credit_num:5.1f}{RESET_COLOR_STR}",
             )
         for item in self.course_filter.values():
-            if type(item) is not Dir:
+            if not isinstance(item, Dir):
                 continue
             if item.is_frame:
                 item.print_son()
@@ -97,14 +97,14 @@ class Dir(object):
         self.now_certificated_credit_num = 0.0
         if self.is_frame:  # 下を見に行く
             for item in self.course_filter.values():
-                if type(item) is not Dir:
+                if not isinstance(item, Dir):
                     continue
                 res_d = item.check(ls)
                 self.now_certificated_credit_num += res_d[0]
                 self.feature_certificated_credit_num += res_d[1]
         else:  # RecoFil について
             for item in self.course_filter.values():
-                if type(item) is not RecognizedFilter:
+                if not isinstance(item, RecognizedFilter):
                     continue
                 res_f = item.checkCourse(ls)
                 self.now_certificated_credit_num += res_f[0]

@@ -143,27 +143,27 @@ def genJSON(v0: Level1, input_csv: str, requirements: str) -> None:
     res = {}
     res[v0.name] = v0.genDict()
     for v1 in v0.course_filter.values():
-        if type(v1) is not Dir:
+        if not isinstance(v1, Dir):
             continue
         res[v0.name]["leaf"][v1.name] = v1.genDict()
         for v2 in v1.course_filter.values():
-            if type(v2) is not Dir:
+            if not isinstance(v2, Dir):
                 continue
             res[v0.name]["leaf"][v1.name]["leaf"][v2.name] = v2.genDict()
             for v3 in v2.course_filter.values():
-                if type(v3) is not Dir:
+                if not isinstance(v3, Dir):
                     continue
                 res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][
                     v3.name
                 ] = v3.genDict()
                 for v4 in v3.course_filter.values():
-                    if type(v4) is not Dir:
+                    if not isinstance(v4, Dir):
                         continue
                     res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name][
                         "leaf"
                     ][v4.name] = v4.genDict()
                     for v5 in v4.course_filter.values():
-                        if type(v5) is not Dir:
+                        if not isinstance(v5, Dir):
                             continue
                         res[v0.name]["leaf"][v1.name]["leaf"][v2.name]["leaf"][v3.name][
                             "leaf"
