@@ -6,7 +6,8 @@ import { useTable } from "react-table";
 import { readCsv } from './checkGraduate/readCsv.ts'
 import { checkGraduate } from './checkGraduate/checkGrad.ts'
 import Select from 'react-select'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 class Table extends React.Component {
   render() {
@@ -124,11 +125,8 @@ function Main() {
 
   return (
     <div className="App">
-      <header className="App-Upload">
+      <div className="App-Upload">
         <div>
-          <a>
-            target csv
-          </a>
           <input type="file" onChange={onFileInputChangeCSV} />
           {/* </div> */}
           {/* <div>
@@ -154,14 +152,14 @@ function Main() {
             onChange={selectReq}
             defaultValue={{ value: 'coins20.json', label: 'coins20' }}
           />
-          <button onClick={rerender}>
+          <Button onClick={rerender}>
             rerender
-          </button>
+          </Button>
         </div>
-      </header>
-      <header className="App-header">
+      </div>
+      <div className="App-main">
         <Table value={JsonData} depth={4} />
-      </header>
+      </div>
     </div>
   );
 }
