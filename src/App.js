@@ -7,6 +7,34 @@ import Select from 'react-select'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
+
+
+
+const Footer = () => {
+  return (
+    <footer className="footer-detail-container">
+      <div className="footer-detail-container--inner center-box">
+
+        <div className='ft'>
+          <a
+            href="https://github.com/oshamashama/g-checker-for-itf"
+            target="_blank"
+            rel="noreferrer noopener">
+            GitHub
+          </a>
+        </div>
+        <div >
+          提供されているプログラム、またそのプログラムによる実行結果に関する保証はできかねます。
+        </div>
+        <div >
+          選択されたファイルなどを卒業判定以外の目的に利用することはありません。
+        </div>
+      </div>
+    </footer >
+  );
+};
+
+
 class Table extends React.Component {
   render() {
     let itemList = []
@@ -103,22 +131,31 @@ function Main() {
   return (
     <div className="App">
       <div className="App-Upload">
-        <div>
-          <input type="file" onChange={onFileInputChangeCSV} />
+        <div className='Upload-Comp'>
+          <label>
+            twins からダウンロードした
+            <input type="file" onChange={onFileInputChangeCSV} />
+          </label>
+        </div>
+        <div className='Upload-Comp'>
           <Select
+            className='selectList'
             options={options}
             onChange={selectReq}
             defaultValue={{ value: 'coins20.json', label: 'coins20' }}
           />
+        </div>
+        <div className='Upload-Comp'>
           <Button onClick={rerender}>
-            rerender
+            判定
           </Button>
         </div>
       </div>
       <div className="App-main">
         <Table value={JsonData} depth={4} />
       </div>
-    </div>
+      <Footer />
+    </div >
   );
 }
 
