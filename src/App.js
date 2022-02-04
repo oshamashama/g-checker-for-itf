@@ -1,8 +1,6 @@
-import React, { useState, Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import './App.css';
 import Data from './reqJson/coins20.json'
-import { useTable } from "react-table";
 import { readCsv } from './checkGraduate/readCsv.ts'
 import { checkGraduate } from './checkGraduate/checkGrad.ts'
 import Select from 'react-select'
@@ -11,7 +9,6 @@ import Button from 'react-bootstrap/Button';
 
 class Table extends React.Component {
   render() {
-    console.log("updateupdateupdateupdateupdateupdateupdateupdateupdateupdateupdateupdateupdate");
     let itemList = []
     for (const key in this.props.value) {
       let pushStr = ' ' + (this.props.value[key]['now_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['now_certificated_credit_num'])
@@ -67,15 +64,14 @@ class Table extends React.Component {
 function Main() {
   let [JsonData, setJsonData] = useState(Data);
   let [DefJsonData, setDefJsonData] = useState(Data);
-  let [GradeData, setGradeData] = useState();
+  // let [GradeData, setGradeData] = useState();
   const [, rerender] = useState();
 
   const onFileInputChangeCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setJsonData(DefJsonData);
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
-      // setGradeData(readCsv(reader.result));
+      setJsonData(DefJsonData);
       checkGraduate(readCsv(reader.result), JsonData, (res) => {
         setJsonData(res);
       });
@@ -92,30 +88,11 @@ function Main() {
     reader.readAsText(file);
   };
   const selectReq = (f) => {
-    // console.log(f.value);
     var data = require('./reqJson/' + f.value);
-    // console.log(data);
     setDefJsonData(data);
     setJsonData(DefJsonData);
-    // const file = e.target.files[0];
-    // const reader = new FileReader();
-    // reader.onload = () => {
-    //   setJsonData(JSON.parse(reader.result));
-    // };
-    // reader.readAsText(file);
   };
 
-  const update = () => {
-    console.log(GradeData);
-  }
-  const update2 = () => {
-    console.log(JsonData)
-  }
-  const update3 = () => {
-    checkGraduate(GradeData, JsonData, (res) => {
-      setJsonData(res);
-    });
-  }
   const options = [
     { value: 'mast20.json', label: 'mast20' },
     { value: 'coins19.json', label: 'coins19' },
@@ -128,25 +105,6 @@ function Main() {
       <div className="App-Upload">
         <div>
           <input type="file" onChange={onFileInputChangeCSV} />
-          {/* </div> */}
-          {/* <div>
-          <a>
-            requirements json
-          </a>
-          <input type="file" onChange={onFileInputChangeJSON} />
-        </div> */}
-          {/* <div> */}
-          {/* <button onClick={update}>
-            check csv
-          </button>
-          <button onClick={update2}>
-            check json
-          </button>
-          <button onClick={update3}>
-            update
-          </button> */}
-          {/* </div> */}
-          {/* <div> */}
           <Select
             options={options}
             onChange={selectReq}

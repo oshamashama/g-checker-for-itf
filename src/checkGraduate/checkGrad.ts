@@ -9,23 +9,28 @@ export function checkGraduate(grade, req, callback) {
   for (let rishu = 0; rishu < 2; rishu++)
     for (const k1 in req) {
       req[k1] = genNow(
-        req[k1]
+        req[k1],
+        rishu
       );
       for (const k2 in req[k1]['leaf']) {
         req[k1]['leaf'][k2] = genNow(
-          req[k1]['leaf'][k2]
+          req[k1]['leaf'][k2],
+          rishu
         );
         for (const k3 in req[k1]['leaf'][k2]['leaf']) {
           req[k1]['leaf'][k2]['leaf'][k3] = genNow(
-            req[k1]['leaf'][k2]['leaf'][k3]
+            req[k1]['leaf'][k2]['leaf'][k3],
+            rishu
           );
           for (const k4 in req[k1]['leaf'][k2]['leaf'][k3]['leaf']) {
             req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4] = genNow(
-              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]
+              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4],
+              rishu
             );
             for (const k5 in req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf']) {
               req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5] = genNow(
-                req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5]
+                req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5],
+                rishu
               );
               req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5] = checkGet(
                 grade,
@@ -57,8 +62,9 @@ export function checkGraduate(grade, req, callback) {
   return req;
 }
 
-function genNow(req) {
-  if (req[now] === undefined) {
+function genNow(req, rishu) {
+  // if (req[now] === undefined) {
+  if (rishu === 0) {
     req[now] = 0;
     req[feature] = 0;
   }
