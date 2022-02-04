@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/g-checker-for-itf/static/css/main.24c45d09.css",
+    "main.js": "/g-checker-for-itf/static/js/main.e80bf227.js",
+    "static/js/787.20cb2637.chunk.js": "/g-checker-for-itf/static/js/787.20cb2637.chunk.js",
+    "index.html": "/g-checker-for-itf/index.html",
+    "main.24c45d09.css.map": "/g-checker-for-itf/static/css/main.24c45d09.css.map",
+    "main.e80bf227.js.map": "/g-checker-for-itf/static/js/main.e80bf227.js.map",
+    "787.20cb2637.chunk.js.map": "/g-checker-for-itf/static/js/787.20cb2637.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24c45d09.css",
+    "static/js/main.e80bf227.js"
+  ]
+}
