@@ -13,11 +13,11 @@ class Table extends React.Component {
     console.log("updateupdateupdateupdateupdateupdateupdateupdateupdateupdateupdateupdateupdate");
     let itemList = []
     for (const key in this.props.value) {
-      let pushStr = ' ' + (this.props.value[key]['now_certificated_credit_num'])
+      let pushStr = ' ' + (this.props.value[key]['now_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['now_certificated_credit_num'])
         + '('
-        + this.props.value[key]['feature_certificated_credit_num']
+        + (this.props.value[key]['feature_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['feature_certificated_credit_num'])
         + ')/'
-        + (this.props.value[key]['min_certificated_credit_num'])
+        + (this.props.value[key]['min_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['min_certificated_credit_num'])
       let passed = ""
       if (this.props.value[key]['now_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
         passed = "passed"
@@ -65,10 +65,12 @@ class Table extends React.Component {
 
 function Main() {
   let [JsonData, setJsonData] = useState(Data);
+  let [DefJsonData, setDefJsonData] = useState(Data);
   let [GradeData, setGradeData] = useState();
   const [, rerender] = useState();
 
   const onFileInputChangeCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // setJsonData(DefJsonData);
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
@@ -92,7 +94,8 @@ function Main() {
     // console.log(f.value);
     var data = require('./reqJson/' + f.value);
     // console.log(data);
-    setJsonData(data);
+    setDefJsonData(data);
+    setJsonData(DefJsonData);
     // const file = e.target.files[0];
     // const reader = new FileReader();
     // reader.onload = () => {
