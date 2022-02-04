@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import Data from './grade.json'
@@ -61,10 +61,26 @@ class Table extends React.Component {
 }
 
 function Main() {
+    let [JsonData, setJsonData] = useState(Data);
+
+    const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+            setJsonData(JSON.parse(reader.result));
+        };
+        reader.readAsText(file);
+    };
+
     return (
         <div className="App">
+            <header className="App-Upload">
+                <div>
+                    <input type="file" onChange={onFileInputChange} />
+                </div>
+            </header>
             <header className="App-header">
-                <Table value={Data} depth={4} />
+                <Table value={JsonData} depth={4} />
             </header>
         </div>
     );
