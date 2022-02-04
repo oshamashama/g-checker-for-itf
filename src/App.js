@@ -104,7 +104,7 @@ class Table extends React.Component {
 function Main() {
     let [JsonData, setJsonData] = useState(Data);
     let [DefJsonData, setDefJsonData] = useState(Data);
-    // let [GradeData, setGradeData] = useState();
+    let [GradeData, setGradeData] = useState();
     const [, rerender] = useState();
 
     const onFileInputChangeCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -119,18 +119,20 @@ function Main() {
         reader.readAsText(file);
     };
 
-    const onFileInputChangeJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.onload = () => {
-            setJsonData(JSON.parse(reader.result));
-        };
-        reader.readAsText(file);
-    };
+    // const onFileInputChangeJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const file = e.target.files[0];
+    //     const reader = new FileReader();
+    //     reader.onload = () => {
+    //         setJsonData(JSON.parse(reader.result));
+    //     };
+    //     reader.readAsText(file);
+    // };
     const selectReq = (f) => {
-        var data = require('./reqJson/' + f.value);
-        setDefJsonData(data);
-        setJsonData(DefJsonData);
+        // setJsonData(DefJsonData);
+        document.getElementById("inF").value = "";
+        // var data = require('./reqJson/' + f.value);
+        setDefJsonData(require('./reqJson/' + f.value));
+        setJsonData(require('./reqJson/' + f.value));
     };
 
     const options = [
@@ -146,7 +148,7 @@ function Main() {
                 <div className='Upload-Comp'>
                     <label>
                         twins からダウンロードした
-                        <input type="file" onChange={onFileInputChangeCSV} />
+                        <input type="file" onChange={onFileInputChangeCSV} id='inF' />
                     </label>
                 </div>
                 <div className='Upload-Comp'>
