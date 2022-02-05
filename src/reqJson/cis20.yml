@@ -82,7 +82,7 @@
               max_certificated_credit_num: 32
               min_certificated_credit_num: 14
               leaf:
-                ＢＣＳ５１（ＥＤＳ，ＥＤ以外）:
+                ＢＣ５１（ＥＤＳ，ＥＤ以外）:
                   max_certificated_credit_num: 14
                   min_certificated_credit_num: 10
                   leaf:
@@ -131,8 +131,8 @@
                     regexp_number: ^2[12].*$
                     regexp_name: ''
                 第１・２外国語:
-                  max_certificated_credit_num: 4
-                  min_certificated_credit_num: 4
+                  max_certificated_credit_num: 8
+                  min_certificated_credit_num: 8
                   leaf:
                     regexp_number: ^3.*$
                     regexp_name: ''
