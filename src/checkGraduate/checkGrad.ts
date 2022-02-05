@@ -41,23 +41,27 @@ export function checkGraduate(grade, req, callback) {
                     rishu === 1
                   );
                   req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now]
-                    += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][now];
+                    += Math.min(rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][now],
+                      rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][max]);
                   req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][feature]
                     += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][feature];
                 }
                 req[k1]['leaf'][k2]['leaf'][k3][now]
-                  += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now];
+                  += Math.min(rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now],
+                    rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][max]);
                 req[k1]['leaf'][k2]['leaf'][k3][feature]
                   += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][feature];
               }
             }
             req[k1]['leaf'][k2][now]
-              += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3][now];
+              += Math.min(hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3][now],
+                hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3][max]);
             req[k1]['leaf'][k2][feature]
               += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3][feature];
           }
           req[k1][now]
-            += hishu * rishu * req[k1]['leaf'][k2][now];
+            += Math.min(hishu * rishu * req[k1]['leaf'][k2][now],
+              hishu * rishu * req[k1]['leaf'][k2][max]);
           req[k1][feature]
             += hishu * rishu * req[k1]['leaf'][k2][feature];
         }
