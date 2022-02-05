@@ -1,5 +1,5 @@
 {
-    "国際総合学類20年度入学": {
+    "国際総合学類国際関係学主専攻20年度入学": {
         "max_certificated_credit_num": 126,
         "min_certificated_credit_num": 126,
         "leaf": {
@@ -29,9 +29,17 @@
                                 "max_certificated_credit_num": 75,
                                 "min_certificated_credit_num": 38,
                                 "leaf": {
-                                    "ＢＣ１１／１２／１６，ＢＥ２２～": {
+                                    "ＢＣ１１／１６～": {
                                         "max_certificated_credit_num": 62,
-                                        "min_certificated_credit_num": 32,
+                                        "min_certificated_credit_num": 14,
+                                        "leaf": {
+                                            "regexp_number": "^B(C1[126]|E22).*$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "ＢＣ１２，ＢＥ２２～": {
+                                        "max_certificated_credit_num": 62,
+                                        "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "^B(C1[126]|E22).*$",
                                             "regexp_name": ""
