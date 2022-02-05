@@ -1,0 +1,196 @@
+心理学類20年度入学:
+  max_certificated_credit_num: 125
+  min_certificated_credit_num: 125
+  leaf:
+    専門:
+      max_certificated_credit_num: 80
+      min_certificated_credit_num: 43
+      leaf:
+        ? ''
+        : max_certificated_credit_num: 80
+          min_certificated_credit_num: 43
+          leaf:
+            必修:
+              max_certificated_credit_num: 22
+              min_certificated_credit_num: 22
+              leaf:
+                知覚・認知心理学:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21291$
+                    regexp_name: ''
+                学習・言語心理学:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21221$
+                    regexp_name: ''
+                感情・人格心理学:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21311$
+                    regexp_name: ''
+                神経・生理心理学:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21321$
+                    regexp_name: ''
+                社会・集団・家族心理学:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21231$
+                    regexp_name: ''
+                発達心理学:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21241$
+                    regexp_name: ''
+                臨床心理学概論:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^CC21211$
+                    regexp_name: ''
+                卒業研究セミナー:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^$
+                    regexp_name: ''
+                卒業研究:
+                  max_certificated_credit_num: 6
+                  min_certificated_credit_num: 6
+                  leaf:
+                    regexp_number: ^CC219[15]8$
+                    regexp_name: ''
+            選択:
+              max_certificated_credit_num: 70
+              min_certificated_credit_num: 46
+              leaf:
+                ＦＢ１２／１３／１４～:
+                  max_certificated_credit_num: 70
+                  min_certificated_credit_num: 46
+                  leaf:
+                    regexp_number: ^FB1[2-4].*$
+                    regexp_name: ''
+    専門基礎:
+      max_certificated_credit_num: 53
+      min_certificated_credit_num: 29
+      leaf:
+        ? ''
+        : max_certificated_credit_num: 53
+          min_certificated_credit_num: 29
+          leaf:
+            必修:
+              max_certificated_credit_num: 6
+              min_certificated_credit_num: 6
+              leaf:
+                微積分Ｉ，ＩＩ:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^FBA(14[6-9]1|15[0-3]1)$
+                    regexp_name: ''
+                線形代数Ｉ，ＩＩ:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^FBA(1(5[89]|6[01])1|16[2-5]1)$
+                    regexp_name: ''
+                数学リテラシー１:
+                  max_certificated_credit_num: 1
+                  min_certificated_credit_num: 1
+                  leaf:
+                    regexp_number: ''
+                    regexp_name: ^数学リテラシー1$
+                数学リテラシー２:
+                  max_certificated_credit_num: 1
+                  min_certificated_credit_num: 1
+                  leaf:
+                    regexp_number: ''
+                    regexp_name: ^数学リテラシー2$
+            選択:
+              max_certificated_credit_num: 47
+              min_certificated_credit_num: 23
+              leaf:
+                ＦＢＡ／ＦＣ／ＦＥ／ＥＥ，生物～:
+                  max_certificated_credit_num: 47
+                  min_certificated_credit_num: 23
+                  leaf:
+                    regexp_number: ^((FBA|FC|FE|EE).*|(EB00001|EB11[368]11|EB11[27]21|EB11131))$
+                    regexp_name: ''
+    基礎:
+      max_certificated_credit_num: 45
+      min_certificated_credit_num: 19
+      leaf:
+        共通:
+          max_certificated_credit_num: 29
+          min_certificated_credit_num: 13
+          leaf:
+            必修:
+              max_certificated_credit_num: 12
+              min_certificated_credit_num: 12
+              leaf:
+                総合科目:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ''
+                    regexp_name: ^(学問への誘い|フレッシュマン・セミナー)$
+                情報:
+                  max_certificated_credit_num: 4
+                  min_certificated_credit_num: 4
+                  leaf:
+                    regexp_number: ^6.*$
+                    regexp_name: ''
+                体育:
+                  max_certificated_credit_num: 2
+                  min_certificated_credit_num: 2
+                  leaf:
+                    regexp_number: ^2[12].*$
+                    regexp_name: ''
+                第１外国語:
+                  max_certificated_credit_num: 4
+                  min_certificated_credit_num: 4
+                  leaf:
+                    regexp_number: ^31.*$
+                    regexp_name: (^English Presentation Skills I+$)
+            選択:
+              max_certificated_credit_num: 17
+              min_certificated_credit_num: 1
+              leaf:
+                総合科目（学士基盤科目）:
+                  max_certificated_credit_num: 1
+                  min_certificated_credit_num: 1
+                  leaf:
+                    regexp_number: ^1.*$
+                    regexp_name: ''
+                総合科目／体育／外国語／国語／芸術:
+                  max_certificated_credit_num: 16
+                  min_certificated_credit_num: 0
+                  leaf:
+                    regexp_number: ^[1-5].*$
+                    regexp_name: ''
+        関連:
+          max_certificated_credit_num: 16
+          min_certificated_credit_num: 6
+          leaf:
+            必修:
+              max_certificated_credit_num: 0
+              min_certificated_credit_num: 0
+              leaf: {}
+            選択:
+              max_certificated_credit_num: 16
+              min_certificated_credit_num: 6
+              leaf:
+                専門科目および専門基礎科目で指定した以外の科目:
+                  max_certificated_credit_num: 10000
+                  min_certificated_credit_num: 6
+                  leaf:
+                    regexp_number: ^.......$
+                    regexp_name: ''
