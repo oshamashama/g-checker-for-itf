@@ -192,7 +192,7 @@
                   max_certificated_credit_num: 5
                   min_certificated_credit_num: 0
                   leaf:
-                    regexp_number: ^(BA|99).*$
+                    regexp_number: ^(BA|99|8).*$
                     regexp_name: ''
                 Ａ／ＢＢ／Ｃ～:
                   max_certificated_credit_num: 8
