@@ -107,8 +107,6 @@ function checkGet(grade, req, rishu) {
         } else if (grade[key]["grade"] === "履修中" && rishu) {
           grade[key]["used_rishu"] = true;
           req[feature] += grade[key]["credit"];
-          console.log(rishu);
-          console.log(grade[key]["course_name"]);
         }
       }
 

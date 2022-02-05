@@ -136,6 +136,7 @@ function Main() {
     };
 
     const options = [
+        { value: 'cis20.json', label: 'cis20' },
         { value: 'math20.json', label: 'math20' },
         { value: 'mast20.json', label: 'mast20' },
         { value: 'coins19.json', label: 'coins19' },
