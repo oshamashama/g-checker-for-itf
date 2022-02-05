@@ -136,7 +136,8 @@ function Main() {
     };
 
     const options = [
-        { value: 'cis20.json', label: 'cis20' },
+        { value: 'cisIR20.json', label: 'cisIR20(国際関係学主専攻)' },
+        { value: 'cisID20.json', label: 'cisID20(国際開発学主専攻)' },
         { value: 'math20.json', label: 'math20' },
         { value: 'mast20.json', label: 'mast20' },
         { value: 'coins19.json', label: 'coins19' },

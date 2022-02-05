@@ -1,8 +1,10 @@
-yq . reqJson/cis20.yml | jq --indent 4 '' > src/reqJson/cis20.json
-yq . reqJson/coins19.yml | jq --indent 4 '' > src/reqJson/coins19.json
-yq . reqJson/coins20.yml | jq --indent 4 '' > src/reqJson/coins20.json
-yq . reqJson/coins21.yml | jq --indent 4 '' > src/reqJson/coins21.json
-yq . reqJson/mast20.yml | jq --indent 4 '' > src/reqJson/mast20.json
-yq . reqJson/math20.yml | jq --indent 4 '' > src/reqJson/math20.json
-yq . reqJson/psych20.yml | jq --indent 4 '' > src/reqJson/psych20.json
+rm src/reqJson/*
+yq . reqYml/cisIR20.yml | jq --indent 4 '' > src/reqJson/cisIR20.json
+yq . reqYml/cisID20.yml | jq --indent 4 '' > src/reqJson/cisID20.json
+yq . reqYml/coins19.yml | jq --indent 4 '' > src/reqJson/coins19.json
+yq . reqYml/coins20.yml | jq --indent 4 '' > src/reqJson/coins20.json
+yq . reqYml/coins21.yml | jq --indent 4 '' > src/reqJson/coins21.json
+yq . reqYml/mast20.yml | jq --indent 4 '' > src/reqJson/mast20.json
+yq . reqYml/math20.yml | jq --indent 4 '' > src/reqJson/math20.json
+yq . reqYml/psych20.yml | jq --indent 4 '' > src/reqJson/psych20.json
 
