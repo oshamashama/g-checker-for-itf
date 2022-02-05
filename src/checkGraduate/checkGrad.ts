@@ -7,64 +7,68 @@ export function checkGraduate(grade, req, callback) {
   // console.log(req);
   // console.log(grade);
   for (let rishu = 0; rishu < 2; rishu++)
-    for (const k1 in req) {
-      req[k1] = genNow(
-        req[k1],
-        rishu
-      );
-      for (const k2 in req[k1]['leaf']) {
-        req[k1]['leaf'][k2] = genNow(
-          req[k1]['leaf'][k2],
+    for (let hishu = 0; hishu < 2; hishu++)
+      for (const k1 in req) {
+        req[k1] = genNow(
+          req[k1],
           rishu
         );
-        for (const k3 in req[k1]['leaf'][k2]['leaf']) {
-          req[k1]['leaf'][k2]['leaf'][k3] = genNow(
-            req[k1]['leaf'][k2]['leaf'][k3],
+        for (const k2 in req[k1]['leaf']) {
+          req[k1]['leaf'][k2] = genNow(
+            req[k1]['leaf'][k2],
             rishu
           );
-          for (const k4 in req[k1]['leaf'][k2]['leaf'][k3]['leaf']) {
-            req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4] = genNow(
-              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4],
+          for (const k3 in req[k1]['leaf'][k2]['leaf']) {
+            req[k1]['leaf'][k2]['leaf'][k3] = genNow(
+              req[k1]['leaf'][k2]['leaf'][k3],
               rishu
             );
-            for (const k5 in req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf']) {
-              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5] = genNow(
-                req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5],
-                rishu
-              );
-              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5] = checkGet(
-                grade,
-                req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5],
-                rishu === 1
-              );
-              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now]
-                += rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][now];
-              req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][feature]
-                += rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][feature];
+            for (const k4 in req[k1]['leaf'][k2]['leaf'][k3]['leaf']) {
+              if (k4 === "必修" && hishu === 0 || k4 === "選択" && hishu === 1) {
+                // console.log(k4)
+                req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4] = genNow(
+                  req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4],
+                  rishu
+                );
+                for (const k5 in req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf']) {
+                  req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5] = genNow(
+                    req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5],
+                    rishu
+                  );
+                  req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5] = checkGet(
+                    grade,
+                    req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5],
+                    rishu === 1
+                  );
+                  req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now]
+                    += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][now];
+                  req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][feature]
+                    += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4]['leaf'][k5][feature];
+                }
+                req[k1]['leaf'][k2]['leaf'][k3][now]
+                  += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now];
+                req[k1]['leaf'][k2]['leaf'][k3][feature]
+                  += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][feature];
+              }
             }
-            req[k1]['leaf'][k2]['leaf'][k3][now]
-              += rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][now];
-            req[k1]['leaf'][k2]['leaf'][k3][feature]
-              += rishu * req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4][feature];
+            req[k1]['leaf'][k2][now]
+              += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3][now];
+            req[k1]['leaf'][k2][feature]
+              += hishu * rishu * req[k1]['leaf'][k2]['leaf'][k3][feature];
           }
-          req[k1]['leaf'][k2][now]
-            += rishu * req[k1]['leaf'][k2]['leaf'][k3][now];
-          req[k1]['leaf'][k2][feature]
-            += rishu * req[k1]['leaf'][k2]['leaf'][k3][feature];
+          req[k1][now]
+            += hishu * rishu * req[k1]['leaf'][k2][now];
+          req[k1][feature]
+            += hishu * rishu * req[k1]['leaf'][k2][feature];
         }
-        req[k1][now]
-          += rishu * req[k1]['leaf'][k2][now];
-        req[k1][feature]
-          += rishu * req[k1]['leaf'][k2][feature];
       }
-    }
 
   return req;
 }
 
 function genNow(req, rishu) {
-  // if (req[now] === undefined) {
-  if (rishu === 0) {
+  if (req[now] === undefined) {
+    // if (rishu === 0) {
     req[now] = 0;
     req[feature] = 0;
   }
@@ -99,6 +103,7 @@ function checkGet(grade, req, rishu) {
       // console.log("---" + reg_name + "regregreg" + reg_number);
       // console.log("---" + grade[key]["course_name"] + "/" + grade[key]["credit"]);
       if (grade[key]["used"] === false && grade[key]["used_rishu"] === false) {
+        // if (grade[key]["used"] === false && grade[key]["used_rishu"] === false && req[now] < req[max]) {
         if (grade[key]["can_use"] === true) {
           grade[key]["used"] = true;
           req[now] += grade[key]["credit"];
