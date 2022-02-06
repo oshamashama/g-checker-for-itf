@@ -3,6 +3,7 @@ const max = 'max_certificated_credit_num';
 const now = 'now_certificated_credit_num';
 const min = 'min_certificated_credit_num';
 const feature = 'feature_certificated_credit_num';
+const count_course = 'count_course';
 export function checkGraduate(grade, req, callback) {
   for (let rishu = 0; rishu < 2; rishu++)
     for (let hishu = 0; hishu < 2; hishu++)
@@ -71,6 +72,7 @@ function genNow(req, rishu) {
   if (req[now] === undefined) {
     req[now] = 0;
     req[feature] = 0;
+    req[count_course] = [];
   }
   return req;
 }
@@ -97,6 +99,7 @@ function checkGet(grade, req, rishu) {
         if (grade[key]["can_use"] === true) {
           grade[key]["used"] = true;
           req[now] += grade[key]["credit"];
+          req[count_course].push(grade[key]["course_name"]);
         } else if (grade[key]["grade"] === "履修中" && rishu) {
           grade[key]["used_rishu"] = true;
           req[feature] += grade[key]["credit"];

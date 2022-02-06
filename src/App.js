@@ -6,6 +6,7 @@ import { checkGraduate } from './checkGraduate/checkGrad.ts'
 import Select from 'react-select'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import { makeStyles } from "@material-ui/core/styles";
 
 
 
@@ -47,58 +48,121 @@ const Footer = () => {
 };
 
 
-class Table extends React.Component {
-    render() {
-        let itemList = []
-        for (const key in this.props.value) {
-            let pushStr = ' ' + (this.props.value[key]['now_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['now_certificated_credit_num'])
-                + '('
-                + (this.props.value[key]['feature_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['feature_certificated_credit_num'])
-                + ')/'
-                + (this.props.value[key]['min_certificated_credit_num'] === undefined ? 0 : this.props.value[key]['min_certificated_credit_num'])
-            let passed = ""
-            if (this.props.value[key]['now_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
-                passed = "passed"
-            else if (this.props.value[key]['now_certificated_credit_num'] + this.props.value[key]['feature_certificated_credit_num'] >= this.props.value[key]['min_certificated_credit_num'])
-                passed = "expect"
-            else
-                passed = "failed"
-            itemList.push([key, pushStr, passed])
+const Table = (props) => {
+    const [hovered, setHovered] = useState(false);
+    const [clicked, setClicked] = useState(false);
+
+    const useStyles = makeStyles({
+        box: {
+            display: "flex"
+        },
+        //左側の四角形のスタイル
+        rectangle1: {
+            margin: "auto",
+            width: "150px",
+            height: "75px",
+            border: "solid royalblue 5px",
+        },
+        //右側の四角形のスタイル
+        rectangle2: {
+            fontSize: 12,
+            width: 400,
+            background: (props) => props.backGroundColor,
+            display: (props) => props.disp
         }
-        if (this.props.depth === 0) {
-            return (
-                <div className='con'>
-                    {itemList.map(([key, st, passed]) => (
-                        <div className={'bl_tate ' + passed} key={key + st}>
+    });
+    //マウスホバー、クリックの状態に応じてスタイルを更新する
+    const classes = useStyles({
+        backGroundColor:
+            hovered && !clicked ? "steelblue" : clicked ? "aqua" : "white",
+        disp: hovered || clicked ? "block" : "none",
+    });
+
+    let itemList = []
+    for (const key in props.value) {
+        let pushStr = ' ' + (props.value[key]['now_certificated_credit_num'] === undefined ? 0 : props.value[key]['now_certificated_credit_num'])
+            + '('
+            + (props.value[key]['feature_certificated_credit_num'] === undefined ? 0 : props.value[key]['feature_certificated_credit_num'])
+            + ')/'
+            + (props.value[key]['min_certificated_credit_num'] === undefined ? 0 : props.value[key]['min_certificated_credit_num'])
+        let passed = ""
+        if (props.value[key]['now_certificated_credit_num'] >= props.value[key]['min_certificated_credit_num'])
+            passed = "passed"
+        else if (props.value[key]['now_certificated_credit_num'] + props.value[key]['feature_certificated_credit_num'] >= props.value[key]['min_certificated_credit_num'])
+            passed = "expect"
+        else
+            passed = "failed"
+        console.log(props.value[key]['count_course']);
+        let count_course = "";
+        for (const k2 in props.value[key]['count_course']) {
+            if (count_course === "")
+                count_course += props.value[key]['count_course'][k2];
+            else
+                count_course += ' / ' + props.value[key]['count_course'][k2];
+        }
+        itemList.push([key, pushStr, passed, count_course])
+    }
+    if (props.depth === 0) {
+        return (
+            <div className='con'>
+                {itemList.map(([key, st, passed, count_course]) => (
+                    <div>
+                        <div
+                            className={'bl_tate ' + passed} key={key + st}
+                            onMouseEnter={() => {
+                                //マウスホバー時に色変更
+                                setHovered(true);
+                            }}
+                            onMouseDown={() => {
+                                //クリック実施時に色変更
+                                setClicked(true);
+                            }}
+                            onMouseUp={() => {
+                                //クリック終了時に色を戻す
+                                setClicked(false);
+                            }}
+                            onMouseLeave={() => {
+                                //マウスホバー終了時に色を戻す
+                                setHovered(false);
+                            }}
+                        >
                             <p className='hight-center last-leaf'>
                                 {(key === "" ? "" : key) + st}
                             </p>
                         </div>
-                    ))}
-                </div>
-            )
-        }
-
-        return (
-            <div className='con'>
-                {itemList.map(([key, st, passed]) => (
-                    <div className={'gre_yoko ' + passed} key={key + st}>
-                        <div className={'bl_tate ' + passed} key={key + st + 'top'}>
-                            <p className='hight-center'>
-                                {(key === "" ? "" : key)}
-                            </p>
-                            <p className='hight-center'>
-                                {st}
-                            </p>
-                        </div>
-                        <div className={'bl_tate2 ' + passed} key={key + st}>
-                            <Table value={this.props.value[key]['leaf']} depth={this.props.depth - 1} />
+                        <div
+                            className={'bl_tate countCourse', passed, classes.rectangle2} key={key + st + '2'}
+                        >
+                            {
+                                count_course
+                            }
                         </div>
                     </div>
                 ))}
             </div>
         )
     }
+
+    return (
+        <div className='con'>
+            {itemList.map(([key, st, passed]) => (
+                <div className={'gre_yoko ' + passed} key={key + st}>
+                    <div className={'bl_tate ' + passed} key={key + st + 'top'}>
+                        <p className='hight-center'>
+                            {(key === "" ? "" : key)}
+                        </p>
+                        <p className='hight-center'>
+                            {st}
+                        </p>
+                    </div>
+                    <div className={'bl_tate2 ' + passed} key={key + st}>
+                        <Table value={props.value[key]['leaf']} depth={props.depth - 1} />
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
+
 }
 
 function Main() {
