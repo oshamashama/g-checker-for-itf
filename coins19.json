@@ -240,8 +240,8 @@
                                         }
                                     },
                                     "体育": {
-                                        "max_certificated_credit_num": 2,
-                                        "min_certificated_credit_num": 2,
+                                        "max_certificated_credit_num": 3,
+                                        "min_certificated_credit_num": 3,
                                         "leaf": {
                                             "regexp_number": "^2[123].*$",
                                             "regexp_name": ""
