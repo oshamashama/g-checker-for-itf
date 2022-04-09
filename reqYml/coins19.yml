@@ -107,7 +107,7 @@
                   min_certificated_credit_num: 3
                   leaf:
                     regexp_number: ''
-                    regexp_name: ^コンピュータとプログラミング$
+                    regexp_name: ^(コンピュータとプログラミング|システムプログラミング序論)$
                 ＤＳＡ:
                   max_certificated_credit_num: 3
                   min_certificated_credit_num: 3
