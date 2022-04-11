@@ -81,7 +81,7 @@ wget https://raw.githubusercontent.com/oshamashama/g-checker-for-itf/main/sample
 
 ```bash
 gchk -s -i target_csv_file
-cp saved_file ~/g-checker-for-itf/tani/src/grade.json
+cp saved_file ~/g-checker-for-itf/src/grade.json
 cd tani
 npm install
 npm start

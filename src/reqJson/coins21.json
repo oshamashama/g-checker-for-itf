@@ -1,5 +1,5 @@
 {
-    "情報科学類": {
+    "情報科学類21年度入学": {
         "max_certificated_credit_num": 125,
         "min_certificated_credit_num": 125,
         "leaf": {
@@ -68,16 +68,16 @@
                 }
             },
             "専門基礎": {
-                "max_certificated_credit_num": 49,
-                "min_certificated_credit_num": 49,
+                "max_certificated_credit_num": 50,
+                "min_certificated_credit_num": 50,
                 "leaf": {
                     "": {
-                        "max_certificated_credit_num": 49,
-                        "min_certificated_credit_num": 49,
+                        "max_certificated_credit_num": 50,
+                        "min_certificated_credit_num": 50,
                         "leaf": {
                             "必修": {
-                                "max_certificated_credit_num": 25,
-                                "min_certificated_credit_num": 25,
+                                "max_certificated_credit_num": 26,
+                                "min_certificated_credit_num": 26,
                                 "leaf": {
                                     "線形代数Ａ": {
                                         "max_certificated_credit_num": 2,
@@ -132,7 +132,7 @@
                                         "min_certificated_credit_num": 3,
                                         "leaf": {
                                             "regexp_number": "",
-                                            "regexp_name": "^プログラミング入門$"
+                                            "regexp_name": "^プログラミング入門[AB]$"
                                         }
                                     },
                                     "コンプロ": {
@@ -140,7 +140,7 @@
                                         "min_certificated_credit_num": 3,
                                         "leaf": {
                                             "regexp_number": "",
-                                            "regexp_name": "^(コンピュータとプログラミング|システムプログラミング序論)$"
+                                            "regexp_name": "^コンピュータとプログラミング$"
                                         }
                                     },
                                     "ＤＳＡ": {
@@ -152,8 +152,8 @@
                                         }
                                     },
                                     "ＤＳＡＬ": {
-                                        "max_certificated_credit_num": 1.5,
-                                        "min_certificated_credit_num": 1.5,
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
                                             "regexp_name": "^データ構造とアルゴリズム実験$"
@@ -168,8 +168,8 @@
                                         }
                                     },
                                     "論理回路演習": {
-                                        "max_certificated_credit_num": 1.5,
-                                        "min_certificated_credit_num": 1.5,
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
                                             "regexp_name": "^(論理回路演習|論理回路実験)$"
@@ -220,16 +220,16 @@
                 }
             },
             "基礎": {
-                "max_certificated_credit_num": 24,
-                "min_certificated_credit_num": 24,
+                "max_certificated_credit_num": 23,
+                "min_certificated_credit_num": 23,
                 "leaf": {
                     "共通": {
-                        "max_certificated_credit_num": 18,
-                        "min_certificated_credit_num": 14,
+                        "max_certificated_credit_num": 17,
+                        "min_certificated_credit_num": 13,
                         "leaf": {
                             "必修": {
-                                "max_certificated_credit_num": 13,
-                                "min_certificated_credit_num": 13,
+                                "max_certificated_credit_num": 12,
+                                "min_certificated_credit_num": 12,
                                 "leaf": {
                                     "総合科目": {
                                         "max_certificated_credit_num": 2,
@@ -240,10 +240,10 @@
                                         }
                                     },
                                     "体育": {
-                                        "max_certificated_credit_num": 3,
-                                        "min_certificated_credit_num": 3,
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
                                         "leaf": {
-                                            "regexp_number": "^2[123].*$",
+                                            "regexp_number": "^2[12].*$",
                                             "regexp_name": ""
                                         }
                                     },

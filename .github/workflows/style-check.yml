@@ -42,7 +42,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: npm install
-        working-directory: ./tani
-      - run: npm run lint
-        working-directory: ./tani
+      - run: npm ci
+      - run: npm run fmt:check
