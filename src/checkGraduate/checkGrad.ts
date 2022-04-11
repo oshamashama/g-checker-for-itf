@@ -1,7 +1,7 @@
 
 const max = 'max_certificated_credit_num';
 const now = 'now_certificated_credit_num';
-const min = 'min_certificated_credit_num';
+//const min = 'min_certificated_credit_num';
 const feature = 'feature_certificated_credit_num';
 const count_course = 'count_course';
 export function checkGraduate(grade, req, callback) {
@@ -23,7 +23,7 @@ export function checkGraduate(grade, req, callback) {
               rishu
             );
             for (const k4 in req[k1]['leaf'][k2]['leaf'][k3]['leaf']) {
-              if (k4 === "必修" && hishu === 0 || k4 === "選択" && hishu === 1) {
+              if ((k4 === "必修" && hishu === 0) || (k4 === "選択" && hishu === 1)) {
                 req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4] = genNow(
                   req[k1]['leaf'][k2]['leaf'][k3]['leaf'][k4],
                   rishu

@@ -131,7 +131,7 @@ const Table = (props) => {
                             </p>
                         </div>
                         <div
-                            className={'bl_tate countCourse', passed, classes.rectangle2} key={key + st + '2'}
+                            className={'bl_tate countCourse ' + passed + ' ' + classes.rectangle2} key={key + st + '2'}
                             onMouseEnter={() => {
                                 //マウスホバー時に色変更
                                 setHovered(true);
@@ -184,10 +184,9 @@ const Table = (props) => {
 function Main() {
     let [JsonData, setJsonData] = useState(Data);
     let [DefJsonData, setDefJsonData] = useState(Data);
-    let [GradeData, setGradeData] = useState();
     const [, rerender] = useState();
 
-    const onFileInputChangeCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onFileInputChangeCSV = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = () => {
@@ -252,7 +251,7 @@ function Main() {
                 <Table value={JsonData} depth={4} />
             </div>
             <Footer />
-        </div >
+        </div>
     );
 }
 
