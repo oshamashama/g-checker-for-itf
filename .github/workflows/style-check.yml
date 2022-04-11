@@ -43,6 +43,4 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
-        working-directory: ./tani
       - run: npm run lint
-        working-directory: ./tani

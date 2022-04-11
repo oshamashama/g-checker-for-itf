@@ -68,7 +68,6 @@
   background-clip: border-box;
 }
 
-
 a:link {
   color: white;
 }
@@ -116,7 +115,6 @@ p {
   background-color: #535353;
   display: flex;
   flex-direction: column;
-
 }
 
 .footer-detail-container--inner {
@@ -129,8 +127,6 @@ p {
   display: flex;
   color: white;
 }
-
-
 
 label {
   height: auto;
