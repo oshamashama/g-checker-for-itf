@@ -1,0 +1,48 @@
+name: Style Check
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  python-style-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install '.[dev]'
+      - name: Run black
+        run: |
+          black --check --diff ./g_checker_for_itf
+      - name: Run mypy
+        if: ${{ always() }}
+        uses: sasanquaneuf/mypy-github-action@a0c442aa252655d7736ce6696e06227ccdd62870
+        with:
+          checkName: python-style-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run flake8
+        if: ${{ always() }}
+        uses: suo/flake8-github-action@3e87882219642e01aa8a6bbd03b4b0adb8542c2a
+        with:
+          checkName: python-style-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  javascript-style-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+        working-directory: ./tani
+      - run: npm run lint
+        working-directory: ./tani
