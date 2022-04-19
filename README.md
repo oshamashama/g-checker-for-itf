@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 -->
 # g-checker-for-itf
 
-ITF の卒業要件を確認したい。(今は coins19/coins20/coins21, mast20 だけ)
+ITF の卒業要件を確認したい。(今は coins19/coins20/coins21, mast20 とか)
 
 提供されているプログラム、またそのプログラムによる実行結果に関する保証はできかねます。
 
@@ -87,7 +87,6 @@ npm install
 npm start
 ```
 
-[http://localhost:3001/](http://localhost:3001/) にアクセスすると確認できます。
 
 ## Screenshots
 
