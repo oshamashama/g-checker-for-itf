@@ -40,7 +40,7 @@
                   max_certificated_credit_num: 10000
                   min_certificated_credit_num: 18
                   leaf:
-                    regexp_number: ^GB[234]0.*$
+                    regexp_number: ^(GB[234]0.*|GB21601|GB21111|GB21802|GB31301|GB31501)$
                     regexp_name: ''
                 ＧＢ２３４／ジョットク:
                   max_certificated_credit_num: 18
