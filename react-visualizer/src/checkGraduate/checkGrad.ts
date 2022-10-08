@@ -49,7 +49,6 @@ export function checkGraduate(grade, req, callback) {
                       ]
                   );
                   req[k1]["leaf"][k2]["leaf"][k3]["leaf"][k4][feature] +=
-                    hishu *
                     rishu *
                     req[k1]["leaf"][k2]["leaf"][k3]["leaf"][k4]["leaf"][k5][
                       feature
@@ -60,7 +59,6 @@ export function checkGraduate(grade, req, callback) {
                   rishu * req[k1]["leaf"][k2]["leaf"][k3]["leaf"][k4][max]
                 );
                 req[k1]["leaf"][k2]["leaf"][k3][feature] +=
-                  hishu *
                   rishu *
                   req[k1]["leaf"][k2]["leaf"][k3]["leaf"][k4][feature];
               }
