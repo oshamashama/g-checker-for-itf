@@ -35,7 +35,7 @@
                                         "max_certificated_credit_num": 4,
                                         "min_certificated_credit_num": 4,
                                         "leaf": {
-                                            "regexp_number": "^GB190[4578]1$",
+                                            "regexp_number": "^GB190[45789]1$",
                                             "regexp_name": ""
                                         }
                                     }
