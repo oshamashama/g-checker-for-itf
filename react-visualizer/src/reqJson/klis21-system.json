@@ -212,7 +212,7 @@
                 }
             },
             "基礎": {
-                "max_certificated_credit_num": 45,
+                "max_certificated_credit_num": 59,
                 "min_certificated_credit_num": 19,
                 "leaf": {
                     "共通": {
