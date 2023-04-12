@@ -1,14 +1,14 @@
 {
-    "知識情報・図書館学類21年度入学": {
+    "知識情報・図書館学類21年度入学(知識情報システム主専攻)": {
         "max_certificated_credit_num": 124,
         "min_certificated_credit_num": 124,
         "leaf": {
             "専門": {
-                "max_certificated_credit_num": 44,
+                "max_certificated_credit_num": 54,
                 "min_certificated_credit_num": 34,
                 "leaf": {
                     "": {
-                        "max_certificated_credit_num": 44,
+                        "max_certificated_credit_num": 54,
                         "min_certificated_credit_num": 34,
                         "leaf": {
                             "必修": {
@@ -62,7 +62,7 @@
                                 "min_certificated_credit_num": 24,
                                 "leaf": {
                                     "ＧＥ７(知識情報システム実習を除く)": {
-                                        "max_certificated_credit_num": 28,
+                                        "max_certificated_credit_num": 36,
                                         "min_certificated_credit_num": 16,
                                         "leaf": {
                                             "regexp_number": "^GE7(?!.*01[1-2]3).*$",
@@ -70,7 +70,7 @@
                                         }
                                     },
                                     "ＧＡ４／ＧＥ４／ＧＥ６／ＧＥ８": {
-                                        "max_certificated_credit_num": 36,
+                                        "max_certificated_credit_num": 28,
                                         "min_certificated_credit_num": 8,
                                         "leaf": {
                                             "regexp_number": "^(GA4)|(GE(4|6|8))$",
@@ -84,12 +84,12 @@
                 }
             },
             "専門基礎": {
-                "max_certificated_credit_num": 53,
-                "min_certificated_credit_num": 29,
+                "max_certificated_credit_num": 71,
+                "min_certificated_credit_num": 51,
                 "leaf": {
                     "": {
-                        "max_certificated_credit_num": 53,
-                        "min_certificated_credit_num": 29,
+                        "max_certificated_credit_num": 71,
+                        "min_certificated_credit_num": 51,
                         "leaf": {
                             "必修": {
                                 "max_certificated_credit_num": 19,
@@ -262,7 +262,7 @@
                                 "min_certificated_credit_num": 1,
                                 "leaf": {
                                     "総合科目（学士基盤科目）": {
-                                        "max_certificated_credit_num": 1,
+                                        "max_certificated_credit_num": 10000,
                                         "min_certificated_credit_num": 1,
                                         "leaf": {
                                             "regexp_number": "^1.*$",
@@ -270,7 +270,7 @@
                                         }
                                     },
                                     "総合科目／体育／外国語／国語／芸術": {
-                                        "max_certificated_credit_num": 16,
+                                        "max_certificated_credit_num": 10000,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "^[1-5].*$",
