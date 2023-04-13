@@ -295,7 +295,7 @@
                                 "min_certificated_credit_num": 6,
                                 "leaf": {
                                     "ＧＡ、ＧＢ、ＧＣ、ＧＥ、共通科目、及び教職に関する科目以外": {
-                                        "max_certificated_credit_num": 10000,
+                                        "max_certificated_credit_num": 16,
                                         "min_certificated_credit_num": 6,
                                         "leaf": {
                                             "regexp_number": "^(?!(GA|GB|GC|GE|[1-5]|9)).*$",
@@ -303,7 +303,7 @@
                                         }
                                     },
                                     "ＧＢ／ＧＣ": {
-                                        "max_certificated_credit_num": 10000,
+                                        "max_certificated_credit_num": 16,
                                         "min_certificated_credit_num": 0,
                                         "leaf": {
                                             "regexp_number": "^(GB|GC).*$",
