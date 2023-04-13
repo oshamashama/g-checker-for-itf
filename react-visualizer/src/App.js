@@ -97,7 +97,7 @@ const Table = (props) => {
       passed = "passed";
     else if (
       props.value[key]["now_certificated_credit_num"] +
-        props.value[key]["feature_certificated_credit_num"] >=
+      props.value[key]["feature_certificated_credit_num"] >=
       props.value[key]["min_certificated_credit_num"]
     )
       passed = "expect";
@@ -228,6 +228,7 @@ function Main() {
     { value: "coins19.json", label: "coins19" },
     { value: "coins20.json", label: "coins20" },
     { value: "coins21.json", label: "coins21" },
+    { value: "klis21-system.json", label: "klis21(システム主専攻)" },
   ];
 
   return (
