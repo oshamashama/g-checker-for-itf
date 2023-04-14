@@ -201,7 +201,7 @@
                                         "max_certificated_credit_num": 52,
                                         "min_certificated_credit_num": 32,
                                         "leaf": {
-                                            "regexp_number": "^(?!.*((GA141|GE121|GA18[2-3]|GA151|GE10911|GE10201|GE11[6-7]|GE11[0-2]))).*$",
+                                            "regexp_number": "^(?!.*((GA141|GE121|GA18[2-3]|GA151|GE10911|GE10201|GE11[6-7]|GE11[0-2])))(GA1|GE[2-3]).*$",
                                             "regexp_name": ""
                                         }
                                     }
