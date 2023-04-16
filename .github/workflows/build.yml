@@ -1,11 +1,11 @@
-name: Test
+name: build
 on:
   push:
     branches:
       - main
 
 jobs:
-  react-test:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,5 +16,6 @@ jobs:
           npm ci
       - name: Build
         run: |
+          cd react-visualizer
           npm run deploy
           git push origin main
