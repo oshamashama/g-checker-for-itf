@@ -18,4 +18,8 @@ jobs:
         run: |
           cd react-visualizer
           npm run deploy
-          git push origin main
+      - name: Push
+        run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git push origin HEAD:${GITHUB_REF}; \
