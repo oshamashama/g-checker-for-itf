@@ -21,7 +21,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "eject": "react-scripts eject",
-        "deploy": "react-scripts build && rm -rf ../docs && mv build ../docs && git add ../docs && git commit -m \"build\"",
+        "deploy": "react-scripts build && rm -rf ../docs && mv build ../docs",
         "fmt:check": "prettier --check src",
         "fmt": "prettier --write src"
     },

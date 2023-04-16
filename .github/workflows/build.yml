@@ -22,4 +22,8 @@ jobs:
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git push origin HEAD:${GITHUB_REF}; \
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "auto build"; \
+            git push origin HEAD:${GITHUB_REF}; \
+          fi
