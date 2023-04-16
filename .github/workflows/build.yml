@@ -17,10 +17,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
-          cache-dependency-path: ./react-visualizer/package-lock.json
-      - run: |
-          npm ci
+      - uses: actions/cache@v3
+        id: node_modules_cache_id
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
+      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+        run: npm install
+      - run: npm ls --depth=0
       - name: Build
         run: |
           npm run deploy
