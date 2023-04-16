@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        run: cd react-visualizer
       - name: Install Dependencies
         run: |
+          cd react-visualizer
           ls
           npm ci
       - name: Build
