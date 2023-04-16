@@ -1,11 +1,11 @@
-name: build
+name: Test
 on:
   push:
     branches:
       - main
 
 jobs:
-  build-and-push:
+  react-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
