@@ -140,30 +140,31 @@ const Table = (props) => {
                 {(key === "" ? "" : key) + st}
               </p>
             </div>
-            <div
-              className={
-                "bl_tate countCourse " + passed + " " + classes.rectangle2
-              }
-              key={key + st + "2"}
-              onMouseEnter={() => {
-                //マウスホバー時に色変更
-                setHovered(true);
-              }}
-              onMouseDown={() => {
-                //クリック実施時に色変更
-                setClicked(true);
-              }}
-              onMouseUp={() => {
-                //クリック終了時に色を戻す
-                setClicked(false);
-              }}
-              onMouseLeave={() => {
-                //マウスホバー終了時に色を戻す
-                setHovered(false);
-              }}
-            >
-              {count_course}
-            </div>
+            {count_course !== "" &&
+              <div
+                className={
+                  "bl_tate countCourse " + passed + " " + classes.rectangle2
+                }
+                key={key + st + "2"}
+                onMouseEnter={() => {
+                  //マウスホバー時に色変更
+                  setHovered(true);
+                }}
+                onMouseDown={() => {
+                  //クリック実施時に色変更
+                  setClicked(true);
+                }}
+                onMouseUp={() => {
+                  //クリック終了時に色を戻す
+                  setClicked(false);
+                }}
+                onMouseLeave={() => {
+                  //マウスホバー終了時に色を戻す
+                  setHovered(false);
+                }}
+              >
+                {count_course}
+              </div>}
           </div>
         ))}
       </div>
