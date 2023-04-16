@@ -48,26 +48,6 @@ const Table = (props) => {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  const useStyles = makeStyles({
-    box: {
-      display: "flex",
-    },
-    //左側の四角形のスタイル
-    rectangle1: {
-      margin: "auto",
-      width: "150px",
-      height: "75px",
-      border: "solid royalblue 5px",
-    },
-    //右側の四角形のスタイル
-    rectangle2: {
-      fontSize: 12,
-      width: 400,
-      background: (props) => props.backGroundColor,
-      display: (props) => props.disp,
-    },
-  });
-
   let itemList = [];
   for (const key in props.value) {
     let pushStr =
