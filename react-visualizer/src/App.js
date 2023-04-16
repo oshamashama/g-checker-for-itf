@@ -6,7 +6,6 @@ import { checkGraduate } from "./checkGraduate/checkGrad.ts";
 import Select from "react-select";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
-import { makeStyles } from "@material-ui/core/styles";
 
 const Footer = () => {
   return (
