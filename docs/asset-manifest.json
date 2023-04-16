@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/g-checker-for-itf/static/css/main.67891b1c.css",
-    "main.js": "/g-checker-for-itf/static/js/main.2f03746c.js",
+    "main.css": "/g-checker-for-itf/static/css/main.39b1b140.css",
+    "main.js": "/g-checker-for-itf/static/js/main.87d260e8.js",
     "static/js/787.20cb2637.chunk.js": "/g-checker-for-itf/static/js/787.20cb2637.chunk.js",
     "index.html": "/g-checker-for-itf/index.html",
-    "main.67891b1c.css.map": "/g-checker-for-itf/static/css/main.67891b1c.css.map",
-    "main.2f03746c.js.map": "/g-checker-for-itf/static/js/main.2f03746c.js.map",
+    "main.39b1b140.css.map": "/g-checker-for-itf/static/css/main.39b1b140.css.map",
+    "main.87d260e8.js.map": "/g-checker-for-itf/static/js/main.87d260e8.js.map",
     "787.20cb2637.chunk.js.map": "/g-checker-for-itf/static/js/787.20cb2637.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67891b1c.css",
-    "static/js/main.2f03746c.js"
+    "static/css/main.39b1b140.css",
+    "static/js/main.87d260e8.js"
   ]
 }
