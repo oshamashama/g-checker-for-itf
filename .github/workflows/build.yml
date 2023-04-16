@@ -8,6 +8,7 @@ jobs:
   build-and-push:
     defaults:
       run:
+        shell: bash
         working-directory: ./react-visualizer
     runs-on: ubuntu-latest
     steps:
@@ -16,8 +17,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
+          # cache: npm
       - run: |
+          pwd
           ls
           npm ci
       - name: Build
