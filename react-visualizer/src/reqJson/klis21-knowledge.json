@@ -39,19 +39,19 @@
                                             "regexp_name": ""
                                         }
                                     },
-                                    "知識情報システム実習A": {
+                                    "知識情報科学実習A": {
                                         "max_certificated_credit_num": 1,
                                         "min_certificated_credit_num": 1,
                                         "leaf": {
-                                            "regexp_number": "^GE70113$",
+                                            "regexp_number": "^GE60113$",
                                             "regexp_name": ""
                                         }
                                     },
-                                    "知識情報システム実習B": {
+                                    "知識情報科学実習B": {
                                         "max_certificated_credit_num": 1,
                                         "min_certificated_credit_num": 1,
                                         "leaf": {
-                                            "regexp_number": "^GE70123$",
+                                            "regexp_number": "^GE60123$",
                                             "regexp_name": ""
                                         }
                                     }
@@ -61,19 +61,19 @@
                                 "max_certificated_credit_num": 44,
                                 "min_certificated_credit_num": 24,
                                 "leaf": {
-                                    "ＧＥ７(知識情報システム実習を除く)": {
+                                    "ＧＥ６(知識情報科学実習を除く)": {
                                         "max_certificated_credit_num": 36,
                                         "min_certificated_credit_num": 16,
                                         "leaf": {
-                                            "regexp_number": "^GE7(?!.*01[1-2]3).*$",
+                                            "regexp_number": "^GE6(?!.*01[1-2]3).*$",
                                             "regexp_name": ""
                                         }
                                     },
-                                    "ＧＡ４／ＧＥ４／ＧＥ６／ＧＥ８": {
+                                    "ＧＡ４／ＧＥ４／ＧＥ７／ＧＥ８": {
                                         "max_certificated_credit_num": 28,
                                         "min_certificated_credit_num": 8,
                                         "leaf": {
-                                            "regexp_number": "^(GA4)|(GE(4|6|8))$",
+                                            "regexp_number": "^(GA4)|(GE(4|7|8))$",
                                             "regexp_name": ""
                                         }
                                     }
