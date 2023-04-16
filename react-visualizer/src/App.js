@@ -221,16 +221,16 @@ function Main() {
   };
 
   const options = [
-    { value: "cisIR20.json", label: "cisIR20(国際関係学主専攻)" },
-    { value: "cisID20.json", label: "cisID20(国際開発学主専攻)" },
+    { value: "cisIR20.json", label: "cisIR20(国際関係学)" },
+    { value: "cisID20.json", label: "cisID20(国際開発学)" },
     { value: "math20.json", label: "math20" },
     { value: "mast20.json", label: "mast20" },
     { value: "coins19.json", label: "coins19" },
     { value: "coins20.json", label: "coins20" },
     { value: "coins21.json", label: "coins21" },
-    { value: "klis21-system.json", label: "klis21(知識情報システム主専攻)" },
-    { value: "klis21-knowledge.json", label: "klis21(知識科学主専攻)" },
-    { value: "klis21-management.json", label: "klis21(情報資源経営主専攻)" },
+    { value: "klis21-system.json", label: "klis21(知識情報システム)" },
+    { value: "klis21-knowledge.json", label: "klis21(知識科学)" },
+    { value: "klis21-management.json", label: "klis21(情報資源経営)" },
   ];
 
   return (
