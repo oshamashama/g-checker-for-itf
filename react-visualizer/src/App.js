@@ -46,7 +46,6 @@ const Footer = () => {
 
 const Table = (props) => {
   const [hovered, setHovered] = useState(false);
-  const [clicked, setClicked] = useState(false);
 
   const useStyles = makeStyles({
     box: {
@@ -66,12 +65,6 @@ const Table = (props) => {
       background: (props) => props.backGroundColor,
       display: (props) => props.disp,
     },
-  });
-  //マウスホバー、クリックの状態に応じてスタイルを更新する
-  const classes = useStyles({
-    backGroundColor:
-      hovered && !clicked ? "steelblue" : clicked ? "aqua" : "white",
-    disp: hovered || clicked ? "block" : "none",
   });
 
   let itemList = [];
@@ -120,51 +113,18 @@ const Table = (props) => {
               className={"bl_tate " + passed}
               key={key + st}
               onMouseEnter={() => {
-                //マウスホバー時に色変更
                 setHovered(true);
               }}
-              onMouseDown={() => {
-                //クリック実施時に色変更
-                setClicked(true);
-              }}
-              onMouseUp={() => {
-                //クリック終了時に色を戻す
-                setClicked(false);
-              }}
               onMouseLeave={() => {
-                //マウスホバー終了時に色を戻す
                 setHovered(false);
               }}
             >
               <p className="hight-center last-leaf">
-                {(key === "" ? "" : key) + st}
+                {!hovered ?
+                  (key === "" ? "" : key) + st
+                  : (count_course === "" ? "該当する科目を修得していません" : count_course)}
               </p>
             </div>
-            {count_course !== "" &&
-              <div
-                className={
-                  "bl_tate countCourse " + passed + " " + classes.rectangle2
-                }
-                key={key + st + "2"}
-                onMouseEnter={() => {
-                  //マウスホバー時に色変更
-                  setHovered(true);
-                }}
-                onMouseDown={() => {
-                  //クリック実施時に色変更
-                  setClicked(true);
-                }}
-                onMouseUp={() => {
-                  //クリック終了時に色を戻す
-                  setClicked(false);
-                }}
-                onMouseLeave={() => {
-                  //マウスホバー終了時に色を戻す
-                  setHovered(false);
-                }}
-              >
-                {count_course}
-              </div>}
           </div>
         ))}
       </div>
@@ -205,14 +165,6 @@ function Main() {
     reader.readAsText(file);
   };
 
-  // const onFileInputChangeJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //     const file = e.target.files[0];
-  //     const reader = new FileReader();
-  //     reader.onload = () => {
-  //         setJsonData(JSON.parse(reader.result));
-  //     };
-  //     reader.readAsText(file);
-  // };
   const selectReq = (f) => {
     // setJsonData(DefJsonData);
     document.getElementById("inF").value = "";
