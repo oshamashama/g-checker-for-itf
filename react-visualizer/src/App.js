@@ -46,6 +46,7 @@ const Footer = () => {
 
 const Table = (props) => {
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   const useStyles = makeStyles({
     box: {
@@ -115,12 +116,18 @@ const Table = (props) => {
               onMouseEnter={() => {
                 setHovered(true);
               }}
+              onMouseDown={() => {
+                setClicked(true);
+              }}
+              onMouseUp={() => {
+                setClicked(false);
+              }}
               onMouseLeave={() => {
                 setHovered(false);
               }}
             >
               <p className="hight-center last-leaf">
-                {!hovered ?
+                {!(hovered && !clicked) ?
                   (key === "" ? "" : key) + st
                   : (count_course === "" ? "該当する科目を修得していません" : count_course)}
               </p>
