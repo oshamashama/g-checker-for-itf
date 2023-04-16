@@ -17,10 +17,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          # cache: npm
+          cache: npm
+          cache-dependency-path: ./react-visualizer/yarn.lock
       - run: |
-          pwd
-          ls
           npm ci
       - name: Build
         run: |
