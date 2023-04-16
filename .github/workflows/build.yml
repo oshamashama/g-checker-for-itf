@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
-          cache-dependency-path: ./react-visualizer/yarn.lock
+          cache-dependency-path: ./react-visualizer/package-lock.json
       - run: |
           npm ci
       - name: Build
