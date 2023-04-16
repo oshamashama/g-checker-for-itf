@@ -1,0 +1,321 @@
+{
+    "知識情報・図書館学類21年度入学(情報資源経営主専攻)": {
+        "max_certificated_credit_num": 124,
+        "min_certificated_credit_num": 124,
+        "leaf": {
+            "専門": {
+                "max_certificated_credit_num": 54,
+                "min_certificated_credit_num": 34,
+                "leaf": {
+                    "": {
+                        "max_certificated_credit_num": 54,
+                        "min_certificated_credit_num": 34,
+                        "leaf": {
+                            "必修": {
+                                "max_certificated_credit_num": 10,
+                                "min_certificated_credit_num": 10,
+                                "leaf": {
+                                    "卒業研究": {
+                                        "max_certificated_credit_num": 6,
+                                        "min_certificated_credit_num": 6,
+                                        "leaf": {
+                                            "regexp_number": "^FB14908$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "専門英語B": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE507[1-3]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "専門英語C": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE508[1-3]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "知識情報システム実習A": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE70113$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "知識情報システム実習B": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE70123$",
+                                            "regexp_name": ""
+                                        }
+                                    }
+                                }
+                            },
+                            "選択": {
+                                "max_certificated_credit_num": 44,
+                                "min_certificated_credit_num": 24,
+                                "leaf": {
+                                    "ＧＥ７(知識情報システム実習を除く)": {
+                                        "max_certificated_credit_num": 36,
+                                        "min_certificated_credit_num": 16,
+                                        "leaf": {
+                                            "regexp_number": "^GE7(?!.*01[1-2]3).*$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "ＧＡ４／ＧＥ４／ＧＥ６／ＧＥ８": {
+                                        "max_certificated_credit_num": 28,
+                                        "min_certificated_credit_num": 8,
+                                        "leaf": {
+                                            "regexp_number": "^(GA4)|(GE(4|6|8))$",
+                                            "regexp_name": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "専門基礎": {
+                "max_certificated_credit_num": 71,
+                "min_certificated_credit_num": 51,
+                "leaf": {
+                    "": {
+                        "max_certificated_credit_num": 71,
+                        "min_certificated_credit_num": 51,
+                        "leaf": {
+                            "必修": {
+                                "max_certificated_credit_num": 19,
+                                "min_certificated_credit_num": 19,
+                                "leaf": {
+                                    "知識情報概論": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GA141[1-2]1$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "アカデミックスキルズ": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE121[1-4]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "プログラミング入門A": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GA182[1-4]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "プログラミング入門B": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GA183[1-4]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "情報数学A": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GA151[1-4]1$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "統計": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GE10911$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "哲学": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GE10201$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "専門英語A1": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE116(1|[3-4])2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "専門英語A2": {
+                                        "max_certificated_credit_num": 1,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^GE117(1|[3-4])2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "知識情報演習I": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GE110[1-2]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "知識情報演習II": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GE111[1-2]2$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "知識情報演習III": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^GE112[1-2]2$",
+                                            "regexp_name": ""
+                                        }
+                                    }
+                                }
+                            },
+                            "選択": {
+                                "max_certificated_credit_num": 52,
+                                "min_certificated_credit_num": 32,
+                                "leaf": {
+                                    "ＧＡ１／ＧＥ２／ＧＥ３": {
+                                        "max_certificated_credit_num": 52,
+                                        "min_certificated_credit_num": 32,
+                                        "leaf": {
+                                            "regexp_number": "^(?!.*((GA141|GE121|GA18[2-3]|GA151|GE10911|GE10201|GE11[6-7]|GE11[0-2])))(GA1|GE[2-3]).*$",
+                                            "regexp_name": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "基礎": {
+                "max_certificated_credit_num": 59,
+                "min_certificated_credit_num": 19,
+                "leaf": {
+                    "共通": {
+                        "max_certificated_credit_num": 33,
+                        "min_certificated_credit_num": 13,
+                        "leaf": {
+                            "必修": {
+                                "max_certificated_credit_num": 12,
+                                "min_certificated_credit_num": 12,
+                                "leaf": {
+                                    "総合科目": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "",
+                                            "regexp_name": "^(学問への誘い|フレッシュマン・セミナー)$"
+                                        }
+                                    },
+                                    "情報": {
+                                        "max_certificated_credit_num": 4,
+                                        "min_certificated_credit_num": 4,
+                                        "leaf": {
+                                            "regexp_number": "^6.*$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "体育": {
+                                        "max_certificated_credit_num": 2,
+                                        "min_certificated_credit_num": 2,
+                                        "leaf": {
+                                            "regexp_number": "^2[12].*$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "第１外国語": {
+                                        "max_certificated_credit_num": 4,
+                                        "min_certificated_credit_num": 4,
+                                        "leaf": {
+                                            "regexp_number": "^31.*$",
+                                            "regexp_name": "(^English Presentation Skills I+$)"
+                                        }
+                                    }
+                                }
+                            },
+                            "選択": {
+                                "max_certificated_credit_num": 21,
+                                "min_certificated_credit_num": 1,
+                                "leaf": {
+                                    "総合科目（学士基盤科目）": {
+                                        "max_certificated_credit_num": 10000,
+                                        "min_certificated_credit_num": 1,
+                                        "leaf": {
+                                            "regexp_number": "^1.*$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "総合科目／体育／外国語／国語／芸術": {
+                                        "max_certificated_credit_num": 10000,
+                                        "min_certificated_credit_num": 0,
+                                        "leaf": {
+                                            "regexp_number": "^[1-5].*$",
+                                            "regexp_name": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "関連": {
+                        "max_certificated_credit_num": 16,
+                        "min_certificated_credit_num": 6,
+                        "leaf": {
+                            "必修": {
+                                "max_certificated_credit_num": 0,
+                                "min_certificated_credit_num": 0,
+                                "leaf": {}
+                            },
+                            "選択": {
+                                "max_certificated_credit_num": 16,
+                                "min_certificated_credit_num": 6,
+                                "leaf": {
+                                    "ＧＡ、ＧＢ、ＧＣ、ＧＥ、共通科目、及び教職に関する科目以外": {
+                                        "max_certificated_credit_num": 16,
+                                        "min_certificated_credit_num": 6,
+                                        "leaf": {
+                                            "regexp_number": "^(?!(GA|GB|GC|GE|[1-5]|9)).*$",
+                                            "regexp_name": ""
+                                        }
+                                    },
+                                    "ＧＢ／ＧＣ": {
+                                        "max_certificated_credit_num": 16,
+                                        "min_certificated_credit_num": 0,
+                                        "leaf": {
+                                            "regexp_number": "^(GB|GC).*$",
+                                            "regexp_name": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
