@@ -238,7 +238,7 @@ function Main() {
       <div className="App-Upload">
         <div className="Upload-Comp">
           <label>
-            twins からダウンロードした
+            twins からダウンロード(CSV/UTF-8)した
             <input type="file" onChange={onFileInputChangeCSV} id="inF" />
           </label>
         </div>
