@@ -6,6 +6,9 @@ on:
 
 jobs:
   build-and-push:
+    defaults:
+      run:
+        working-directory: ./react-visualizer
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,12 +18,10 @@ jobs:
           node-version: 16
           cache: npm
       - run: |
-          cd react-visualizer
           ls
           npm ci
       - name: Build
         run: |
-          cd react-visualizer
           npm run deploy
       - name: Push
         run: |
