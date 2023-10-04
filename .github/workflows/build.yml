@@ -4,8 +4,17 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-and-push:
+  build:
     defaults:
       run:
         shell: bash
@@ -28,13 +37,18 @@ jobs:
         run: npm install
       - name: Build
         run: |
-          npm run deploy
-      - name: Push
-        run: |
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          if (git diff --shortstat | grep '[0-9]'); then \
-            git add ..; \
-            git commit -m "auto build"; \
-            git push origin HEAD:${GITHUB_REF}; \
-          fi
+          npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./react-visualizer/build
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
