@@ -178,8 +178,8 @@
                                 }
                             },
                             "選択": {
-                                "max_certificated_credit_num": 24,
-                                "min_certificated_credit_num": 24,
+                                "max_certificated_credit_num": 26,
+                                "min_certificated_credit_num": 26,
                                 "leaf": {
                                     "実質必修のやつ": {
                                         "max_certificated_credit_num": 10000,
