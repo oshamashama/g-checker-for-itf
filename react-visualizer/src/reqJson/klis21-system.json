@@ -73,7 +73,7 @@
                                         "max_certificated_credit_num": 28,
                                         "min_certificated_credit_num": 8,
                                         "leaf": {
-                                            "regexp_number": "^(GA4)|(GE(4|6|8))$",
+                                            "regexp_number": "^(GA4|GE(4|6|8)).*$",
                                             "regexp_name": ""
                                         }
                                     }
