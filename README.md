@@ -11,7 +11,7 @@ ITF の卒業要件を確認したい。(今は coins19/coins20/coins21, mast20 
 
 ```bash
 git clone --depth 1 https://github.com/oshamashama/g-checker-for-itf
-cd g-checker-for-itf
+cd g-checker-for-itf/py-cli/
 pip install .
 ```
 
