@@ -4,7 +4,6 @@
     "private": true,
     "homepage": "https://oshamashama.github.io/g-checker-for-itf/",
     "dependencies": {
-        "@material-ui/core": "^4.12.3",
         "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
         "@testing-library/user-event": "^13.5.0",
