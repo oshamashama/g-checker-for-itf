@@ -167,6 +167,8 @@ function Main() {
     { value: "coins19.json", label: "coins19" },
     { value: "coins20.json", label: "coins20" },
     { value: "coins21.json", label: "coins21" },
+    { value: "coins23-24.json", label: "coins23" },
+    { value: "coins23-24.json", label: "coins24" },
     { value: "klis21-system.json", label: "klis21(知識情報システム)" },
     { value: "klis21-knowledge.json", label: "klis21(知識科学)" },
     { value: "klis21-management.json", label: "klis21(情報資源経営)" },
