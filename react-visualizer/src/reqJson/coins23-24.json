@@ -68,12 +68,12 @@
                 }
             },
             "専門基礎": {
-                "max_certificated_credit_num": 50,
-                "min_certificated_credit_num": 50,
+                "max_certificated_credit_num": 52,
+                "min_certificated_credit_num": 52,
                 "leaf": {
                     "": {
-                        "max_certificated_credit_num": 50,
-                        "min_certificated_credit_num": 50,
+                        "max_certificated_credit_num": 52,
+                        "min_certificated_credit_num": 52,
                         "leaf": {
                             "必修": {
                                 "max_certificated_credit_num": 26,
