@@ -84,7 +84,7 @@
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
-                                            "regexp_name": "^線形代数A$"
+                                            "regexp_name": "^線形代数[A12]$"
                                         }
                                     },
                                     "線形代数Ｂ": {
@@ -100,7 +100,7 @@
                                         "min_certificated_credit_num": 2,
                                         "leaf": {
                                             "regexp_number": "",
-                                            "regexp_name": "^微分積分A$"
+                                            "regexp_name": "^微分積分[A12]$"
                                         }
                                     },
                                     "微分積分Ｂ": {
