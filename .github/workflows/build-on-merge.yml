@@ -1,4 +1,4 @@
-name: build
+name: build on merge
 on:
   push:
     branches:
@@ -21,12 +21,12 @@ jobs:
         working-directory: ./react-visualizer
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
-      - uses: actions/cache@v3
+          node-version: 20
+      - uses: actions/cache@v4
         id: node_modules_cache_id
         env:
           cache-name: cache-node-modules
